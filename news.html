@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngọc Báo - Tin Tức Phong Thủy & Văn Hóa</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS Chung -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER (Chung) -->
+    <header class="header-main">
+        <div class="logo">
+            <i class="fas fa-newspaper"></i> NGỌC BÁO
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Trang chủ</a>
+            <a href="news.html" class="nav-link active"><i class="fas fa-newspaper"></i> Tin tức</a>
+            <a href="#phongthuy" class="nav-link"><i class="fas fa-yin-yang"></i> Phong thủy</a>
+            <a href="#vanhoa" class="nav-link"><i class="fas fa-landmark"></i> Văn hóa</a>
+            <a href="#thitruong" class="nav-link"><i class="fas fa-chart-line"></i> Thị trường</a>
+        </nav>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- BREAKING NEWS (Trang tin tức) -->
+    <div class="breaking-news">
+        <div class="breaking-content">
+            <span class="breaking-label">
+                <i class="fas fa-bolt"></i> TIN NÓNG
+            </span>
+            <div class="breaking-text" id="breakingText">
+                <!-- Tin nóng được tải bằng JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO NEWS (Trang tin tức) -->
+    <section class="hero-news">
+        <!-- Hero news được tải bằng JavaScript -->
+    </section>
+
+    <!-- MAIN CONTENT (Trang tin tức) -->
+    <div class="news-container">
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <!-- TIN MỚI NHẤT -->
+            <div class="news-section-header">
+                <h2 class="news-section-title">Tin tức mới nhất</h2>
+                <a href="#" class="news-section-link">
+                    Xem tất cả <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="news-grid" id="latestNews">
+                <!-- Tin tức được tải bằng JavaScript -->
+            </div>
+
+            <!-- BÀI VIẾT NỔI BẬT -->
+            <div class="featured-news">
+                <h2 class="featured-title">Bài viết nổi bật</h2>
+                <div class="news-card" onclick="NewsPage.openArticle(1)" style="cursor: pointer;">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80" 
+                         alt="Bài viết nổi bật" class="news-image">
+                    <div class="news-content">
+                        <span class="news-category-badge category-thitruong">
+                            <i class="fas fa-chart-line"></i> THỊ TRƯỜNG
+                        </span>
+                        <h3 class="news-title">Ngọc phỉ thúy Việt Nam: Tiềm năng và thách thức trên thị trường quốc tế</h3>
+                        <p class="news-excerpt">Phân tích chuyên sâu về vị thế của ngọc phỉ thúy Việt Nam trong bối cảnh cạnh tranh toàn cầu...</p>
+                        <div class="news-footer">
+                            <span class="news-date"><i class="far fa-calendar"></i> 12/04/2024</span>
+                            <span class="news-views"><i class="fas fa-eye"></i> 18.7K lượt xem</span>
+                            <a href="#" class="read-more" onclick="event.stopPropagation(); NewsPage.openArticle(1); return false;">
+                                Đọc tiếp <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KHÁM PHÁ VĂN HÓA -->
+            <div class="news-section-header">
+                <h2 class="news-section-title">Khám phá văn hóa</h2>
+                <a href="#" class="news-section-link">
+                    Xem thêm <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="news-grid">
+                <div class="news-card" onclick="NewsPage.openArticle(8)">
+                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80" 
+                         alt="Trang sức truyền thống" class="news-image">
+                    <div class="news-content">
+                        <span class="news-category-badge category-vanhoa">
+                            <i class="fas fa-landmark"></i> VĂN HÓA
+                        </span>
+                        <h3 class="news-title">Trang sức ngọc trong đám cưới truyền thống Việt Nam</h3>
+                        <p class="news-excerpt">Vai trò và ý nghĩa của trang sức ngọc trong nghi lễ cưới hỏi truyền thống Việt Nam.</p>
+                        <div class="news-footer">
+                            <span class="news-date"><i class="far fa-calendar"></i> 08/04/2024</span>
+                            <span class="news-views"><i class="fas fa-eye"></i> 12.4K lượt xem</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGINATION -->
+            <div class="pagination">
+                <a href="#" class="page-link"><i class="fas fa-chevron-left"></i></a>
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <a href="#" class="page-link">4</a>
+                <a href="#" class="page-link"><i class="fas fa-chevron-right"></i></a>
+            </div>
+        </main>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <!-- TIN ĐANG HOT -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">
+                    <i class="fas fa-fire"></i> Tin đang hot
+                </h3>
+                <div class="trending-list" id="trendingNews">
+                    <!-- Trending news được tải bằng JavaScript -->
+                </div>
+            </div>
+
+            <!-- DANH MỤC -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">
+                    <i class="fas fa-folder"></i> Danh mục
+                </h3>
+                <div class="category-list" id="categoryList">
+                    <!-- Categories được tải bằng JavaScript -->
+                </div>
+            </div>
+
+            <!-- THẺ PHỔ BIẾN -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">
+                    <i class="fas fa-tags"></i> Thẻ phổ biến
+                </h3>
+                <div class="tags-cloud" id="tagsCloud">
+                    <!-- Tags được tải bằng JavaScript -->
+                </div>
+            </div>
+
+            <!-- NHẬN BẢN TIN -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">
+                    <i class="fas fa-envelope"></i> Nhận bản tin
+                </h3>
+                <p class="widget-text">Đăng ký để nhận tin tức mới nhất về phong thủy và ngọc quý</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Email của bạn" required>
+                    <button type="submit" class="newsletter-btn">
+                        <i class="fas fa-paper-plane"></i> Đăng ký
+                    </button>
+                </form>
+            </div>
+
+            <!-- THÔNG TIN SINH VIÊN -->
+            <div class="sidebar-widget student-info-widget">
+                <h3 class="widget-title">
+                    <i class="fas fa-user-graduate"></i> Thông tin sinh viên
+                </h3>
+                <div class="student-info">
+                    <div class="info-item">
+                        <span class="info-label">Họ tên:</span>
+                        <span class="info-value">Phạm Quốc Bảo</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">MSSV:</span>
+                        <span class="info-value">2274802010049</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Môn học:</span>
+                        <span class="info-value">Thiết kế Web</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Lớp:</span>
+                        <span class="info-value">DHTMDTT/TT</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Dự án:</span>
+                        <span class="info-value">Website tin tức</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- FOOTER (Chung) -->
+    <footer class="footer-main">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4 class="footer-title">
+                    <i class="fas fa-newspaper"></i> NGỌC BÁO
+                </h4>
+                <p class="footer-text">
+                    Cổng thông tin hàng đầu về phong thủy, văn hóa phương Đông và ngọc quý.
+                </p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-subtitle"><i class="fas fa-link"></i> Liên kết nhanh</h4>
+                <div class="footer-links-list">
+                    <a href="#"><i class="fas fa-chevron-right"></i> Tin tức mới nhất</a>
+                    <a href="#"><i class="fas fa-chevron-right"></i> Phong thủy</a>
+                    <a href="#"><i class="fas fa-chevron-right"></i> Văn hóa phương Đông</a>
+                    <a href="#"><i class="fas fa-chevron-right"></i> Thị trường ngọc quý</a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-subtitle"><i class="fas fa-headset"></i> Liên hệ</h4>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Địa chỉ:</strong>
+                            <p>123 Nguyễn Văn Linh, Quận 7, TP.HCM</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Hotline:</strong>
+                            <p>1900 1234</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email:</strong>
+                            <p>info@ngocbao.vn</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-subtitle"><i class="fas fa-qrcode"></i> QR Code</h4>
+                <div class="qr-code">
+                    <div class="qr-placeholder">
+                        <i class="fas fa-qrcode"></i>
+                        <p>Quét QR Code để truy cập mobile</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>© 2024 - <span id="currentYear">2024</span> NGỌC BÁO. Tất cả các quyền được bảo lưu.</p>
+                <p class="student-note">
+                    <i class="fas fa-code"></i> Bài thực hành môn Thiết kế Web | Sinh viên: Phạm Quốc Bảo - MSSV: 2274802010049
+                </p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#">Chính sách bảo mật</a>
+                <a href="#">Điều khoản sử dụng</a>
+                <a href="#">Liên hệ quảng cáo</a>
+            </div>
+        </div>
+        
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </footer>
+
+    <!-- JavaScript (type="module" để import/export) -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
