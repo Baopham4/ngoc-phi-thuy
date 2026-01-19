@@ -1,24 +1,11 @@
-// =========================================== //
-// DỮ LIỆU CHUNG CHO CẢ 2 TRANG
-// =========================================== //
-
-// Dữ liệu sinh viên
-const studentInfo = {
-    name: "Phạm Quốc Bảo",
-    mssv: "2274802010049",
-    class: "DHTMDTT/TT",
-    subject: "Thiết kế Web",
-    project: "Website Ngọc Phỉ Thúy"
-};
-
-// Dữ liệu sản phẩm (cho trang chủ)
+// Trong file data.js - THAY THẾ CÁC LINK ẢNH
 const productsData = [
     {
         id: 1,
         name: "Vòng Phỉ Thúy Lý Ngư",
         description: "Ngọc tự nhiên từ Myanmar, màu lục bảo thượng hạng. Thiết kế hình cá chép với ý nghĩa phong thủy vượng tài lộc.",
         price: "42.000.000 VNĐ",
-        image: "images/product1.jpg",
+        image: "https://images.unsplash.com/photo-1594575111051-4e2d1e301a80?w=400&h=400&fit=crop", // Ảnh ngọc xanh
         badge: "BÁN CHẠY",
         category: "Vòng tay",
         material: "Ngọc phỉ thúy tự nhiên",
@@ -31,7 +18,7 @@ const productsData = [
         name: "Ngọc Phỉ Thúy Tuyết",
         description: "Đá trắng trong suốt từ vùng Kachin, vân tuyết độc bản. Chế tác tinh xảo, mang vẻ đẹp thuần khiết.",
         price: "85.500.000 VNĐ",
-        image: "images/product2.jpg",
+        image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&h=400&fit=crop", // Ảnh ngọc trắng
         badge: "CAO CẤP",
         category: "Mặt ngọc",
         material: "Ngọc phỉ thúy tuyết trắng",
@@ -44,7 +31,7 @@ const productsData = [
         name: "Nhẫn Phỉ Thúy Rồng",
         description: "Kết hợp vàng 24K và ngọc phỉ thúy xanh lục từ Myanmar. Thiết kế rồng uốn lượn tinh xảo, quyền uy.",
         price: "68.750.000 VNĐ",
-        image: "images/product3.jpg",
+        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=400&fit=crop", // Ảnh nhẫn
         badge: "ĐỘC BẢN",
         category: "Nhẫn",
         material: "Ngọc phỉ thúy + Vàng 24K",
@@ -57,7 +44,7 @@ const productsData = [
         name: "Bông Tai Hoa Sen",
         description: "Đôi bông tai hình hoa sen cách điệu, kết hợp ngọc phỉ thúy và kim cương 0.5ct. Vẻ đẹp thanh tao.",
         price: "39.500.000 VNĐ",
-        image: "images/product4.jpg",
+        image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop", // Ảnh bông tai
         badge: "ƯU ĐÃI",
         category: "Bông tai",
         material: "Ngọc phỉ thúy + Kim cương",
@@ -70,7 +57,7 @@ const productsData = [
         name: "Dây Chuyền Phỉ Thúy Viên Mãn",
         description: "Mặt dây chuyền hình tròn, biểu tượng của sự viên mãn. Ngọc màu lục bảo tự nhiên từ Myanmar.",
         price: "75.300.000 VNĐ",
-        image: "images/product5.jpg",
+        image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=400&fit=crop", // Ảnh dây chuyền
         badge: "PHONG THỦY",
         category: "Dây chuyền",
         material: "Ngọc phỉ thúy tự nhiên",
@@ -83,7 +70,7 @@ const productsData = [
         name: "Vòng Tay Kim Tiền Ngọc Bích",
         description: "Chuỗi ngọc phỉ thúy hạng A kết hợp hạt vàng 24K. Mang ý nghĩa tài lộc, thịnh vượng trường tồn.",
         price: "125.000.000 VNĐ",
-        image: "images/product6.jpg",
+        image: "https://images.unsplash.com/photo-1535957998253-26ae1ef29506?w=400&h=400&fit=crop", // Ảnh vòng tay
         badge: "ĐỘC QUYỀN",
         category: "Vòng tay",
         material: "Ngọc phỉ thúy + Vàng 24K",
@@ -93,7 +80,7 @@ const productsData = [
     }
 ];
 
-// Dữ liệu tin tức (cho trang news)
+// Tin tức - CŨNG SỬA LINK ẢNH
 const newsData = {
     hero: {
         id: 1,
@@ -104,15 +91,8 @@ const newsData = {
         date: "15/04/2024",
         readTime: "8 phút",
         views: "25.4K",
-        image: "images/news-hero.jpg"
+        image: "https://images.unsplash.com/photo-1588345921523-c2dce2a71d8e?w=800&h=400&fit=crop" // Hero news
     },
-    
-    breakingNews: [
-        "• Giá ngọc phỉ thúy thượng hạng tăng 15% trong quý đầu năm 2024",
-        "• Triển lãm ngọc quý quốc tế sẽ diễn ra tại Hà Nội tháng 10/2024",
-        "• Phát hiện mỏ ngọc bích mới tại Myanmar với trữ lượng lớn",
-        "• Chuyên gia phong thủy cảnh báo về ngọc giả trên thị trường"
-    ],
     
     latestNews: [
         {
@@ -122,7 +102,7 @@ const newsData = {
             category: "ngocquy",
             date: "14/04/2024",
             views: "18.2K",
-            image: "images/news1.jpg"
+            image: "https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?w=400&h=300&fit=crop" // News 1
         },
         {
             id: 3,
@@ -131,7 +111,7 @@ const newsData = {
             category: "phongthuy",
             date: "13/04/2024",
             views: "22.5K",
-            image: "images/news2.jpg"
+            image: "https://images.unsplash.com/photo-1547825407-12a4355f1c12?w=400&h=300&fit=crop" // News 2
         },
         {
             id: 4,
@@ -140,43 +120,7 @@ const newsData = {
             category: "vanhoa",
             date: "12/04/2024",
             views: "15.8K",
-            image: "images/news3.jpg"
+            image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=300&fit=crop" // News 3
         }
-    ],
-    
-    trendingNews: [
-        {
-            id: 10,
-            title: "Ngọc phỉ thúy 'Vua' được bán với giá kỷ lục 2 triệu USD",
-            views: "45.2K"
-        },
-        {
-            id: 11,
-            title: "10 sai lầm phong thủy phổ biến trong thiết kế nhà ở",
-            views: "38.7K"
-        },
-        {
-            id: 12,
-            title: "Bí ẩn những viên ngọc bích trong lăng mộ vua chúa",
-            views: "32.1K"
-        }
-    ],
-    
-    categories: [
-        { name: "Phong thủy", count: 128, icon: "fas fa-yin-yang" },
-        { name: "Ngọc quý", count: 95, icon: "fas fa-gem" },
-        { name: "Văn hóa", count: 76, icon: "fas fa-landmark" },
-        { name: "Thị trường", count: 54, icon: "fas fa-chart-line" }
-    ],
-    
-    tags: [
-        "Ngọc phỉ thúy", "Phong thủy", "Văn hóa", "Đầu tư",
-        "Tài lộc", "May mắn", "Trang sức", "Cổ vật"
     ]
 };
-
-// Giỏ hàng
-let shoppingCart = [];
-
-// Xuất dữ liệu (CHỈ EXPORT 1 LẦN)
-export { studentInfo, productsData, newsData, shoppingCart };
