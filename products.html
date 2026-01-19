@@ -13,9 +13,6 @@
     
     <!-- CSS Chung -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Filter CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slider-range/css/range-slider.css">
 </head>
 <body>
     <!-- HEADER -->
@@ -66,31 +63,31 @@
                             <input type="checkbox" name="category" value="Vòng tay" checked>
                             <span class="checkmark"></span>
                             Vòng tay
-                            <span class="filter-count">12</span>
+                            <span class="filter-count">2</span>
                         </label>
                         <label class="filter-option">
                             <input type="checkbox" name="category" value="Nhẫn">
                             <span class="checkmark"></span>
                             Nhẫn
-                            <span class="filter-count">8</span>
+                            <span class="filter-count">1</span>
                         </label>
                         <label class="filter-option">
                             <input type="checkbox" name="category" value="Dây chuyền">
                             <span class="checkmark"></span>
                             Dây chuyền
-                            <span class="filter-count">6</span>
+                            <span class="filter-count">1</span>
                         </label>
                         <label class="filter-option">
                             <input type="checkbox" name="category" value="Bông tai">
                             <span class="checkmark"></span>
                             Bông tai
-                            <span class="filter-count">4</span>
+                            <span class="filter-count">1</span>
                         </label>
                         <label class="filter-option">
                             <input type="checkbox" name="category" value="Mặt ngọc">
                             <span class="checkmark"></span>
                             Mặt ngọc
-                            <span class="filter-count">3</span>
+                            <span class="filter-count">1</span>
                         </label>
                     </div>
                 </div>
@@ -113,7 +110,7 @@
                     <h4 class="filter-group-title">Chất liệu</h4>
                     <div class="filter-options">
                         <label class="filter-option">
-                            <input type="checkbox" name="material" value="Ngọc phỉ thúy tự nhiên">
+                            <input type="checkbox" name="material" value="Ngọc phỉ thúy tự nhiên" checked>
                             <span class="checkmark"></span>
                             Ngọc phỉ thúy tự nhiên
                         </label>
@@ -135,7 +132,7 @@
                     <h4 class="filter-group-title">Xuất xứ</h4>
                     <div class="filter-options">
                         <label class="filter-option">
-                            <input type="checkbox" name="origin" value="Myanmar">
+                            <input type="checkbox" name="origin" value="Myanmar" checked>
                             <span class="checkmark"></span>
                             Myanmar
                         </label>
@@ -163,7 +160,7 @@
                 <h3 class="widget-title">
                     <i class="fas fa-fire"></i> Sản phẩm bán chạy
                 </h3>
-                <div class="featured-products-list">
+                <div class="featured-products-list" id="featuredProducts">
                     <!-- Sẽ được tải bằng JS -->
                 </div>
             </div>
@@ -352,5 +349,24 @@
 
     <!-- JavaScript -->
     <script type="module" src="script.js"></script>
+    <script>
+        // Cập nhật số lượng giỏ hàng
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+            
+            function updateCartCount() {
+                const cartCount = document.querySelector('.cart-count');
+                if (cartCount) {
+                    const cart = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
+                    cartCount.textContent = cart.length;
+                }
+            }
+            
+            // Khởi tạo trang sản phẩm
+            if (typeof ProductsPage !== 'undefined') {
+                ProductsPage.init();
+            }
+        });
+    </script>
 </body>
 </html>

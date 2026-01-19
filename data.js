@@ -18,7 +18,7 @@ const productsData = [
         name: "Vòng Phỉ Thúy Lý Ngư",
         description: "Ngọc tự nhiên từ Myanmar, màu lục bảo thượng hạng. Thiết kế hình cá chép với ý nghĩa phong thủy vượng tài lộc.",
         price: "42.000.000 VNĐ",
-        image: "https://images.unsplash.com/photo-1615484477778-ca3b77940c25?w=800&q=80",
+        image: "images/product1.jpg",
         badge: "BÁN CHẠY",
         category: "Vòng tay",
         material: "Ngọc phỉ thúy tự nhiên",
@@ -31,7 +31,7 @@ const productsData = [
         name: "Ngọc Phỉ Thúy Tuyết",
         description: "Đá trắng trong suốt từ vùng Kachin, vân tuyết độc bản. Chế tác tinh xảo, mang vẻ đẹp thuần khiết.",
         price: "85.500.000 VNĐ",
-        image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80",
+        image: "images/product2.jpg",
         badge: "CAO CẤP",
         category: "Mặt ngọc",
         material: "Ngọc phỉ thúy tuyết trắng",
@@ -44,7 +44,7 @@ const productsData = [
         name: "Nhẫn Phỉ Thúy Rồng",
         description: "Kết hợp vàng 24K và ngọc phỉ thúy xanh lục từ Myanmar. Thiết kế rồng uốn lượn tinh xảo, quyền uy.",
         price: "68.750.000 VNĐ",
-        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80",
+        image: "images/product3.jpg",
         badge: "ĐỘC BẢN",
         category: "Nhẫn",
         material: "Ngọc phỉ thúy + Vàng 24K",
@@ -57,7 +57,7 @@ const productsData = [
         name: "Bông Tai Hoa Sen",
         description: "Đôi bông tai hình hoa sen cách điệu, kết hợp ngọc phỉ thúy và kim cương 0.5ct. Vẻ đẹp thanh tao.",
         price: "39.500.000 VNĐ",
-        image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80",
+        image: "images/product4.jpg",
         badge: "ƯU ĐÃI",
         category: "Bông tai",
         material: "Ngọc phỉ thúy + Kim cương",
@@ -70,7 +70,7 @@ const productsData = [
         name: "Dây Chuyền Phỉ Thúy Viên Mãn",
         description: "Mặt dây chuyền hình tròn, biểu tượng của sự viên mãn. Ngọc màu lục bảo tự nhiên từ Myanmar.",
         price: "75.300.000 VNĐ",
-        image: "https://images.unsplash.com/photo-1594575111051-4e2d1e301a80?w=800&q=80",
+        image: "images/product5.jpg",
         badge: "PHONG THỦY",
         category: "Dây chuyền",
         material: "Ngọc phỉ thúy tự nhiên",
@@ -83,7 +83,7 @@ const productsData = [
         name: "Vòng Tay Kim Tiền Ngọc Bích",
         description: "Chuỗi ngọc phỉ thúy hạng A kết hợp hạt vàng 24K. Mang ý nghĩa tài lộc, thịnh vượng trường tồn.",
         price: "125.000.000 VNĐ",
-        image: "https://images.unsplash.com/photo-1535957998253-26ae1ef29506?w=800&q=80",
+        image: "images/product6.jpg",
         badge: "ĐỘC QUYỀN",
         category: "Vòng tay",
         material: "Ngọc phỉ thúy + Vàng 24K",
@@ -104,7 +104,7 @@ const newsData = {
         date: "15/04/2024",
         readTime: "8 phút",
         views: "25.4K",
-        image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&q=80"
+        image: "images/news-hero.jpg"
     },
     
     breakingNews: [
@@ -122,7 +122,7 @@ const newsData = {
             category: "ngocquy",
             date: "14/04/2024",
             views: "18.2K",
-            image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80"
+            image: "images/news1.jpg"
         },
         {
             id: 3,
@@ -131,7 +131,7 @@ const newsData = {
             category: "phongthuy",
             date: "13/04/2024",
             views: "22.5K",
-            image: "https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?w=800&q=80"
+            image: "images/news2.jpg"
         },
         {
             id: 4,
@@ -140,7 +140,7 @@ const newsData = {
             category: "vanhoa",
             date: "12/04/2024",
             views: "15.8K",
-            image: "https://images.unsplash.com/photo-1547825407-12a4355f1c12?w=800&q=80"
+            image: "images/news3.jpg"
         }
     ],
     
@@ -178,14 +178,5 @@ const newsData = {
 // Giỏ hàng
 let shoppingCart = [];
 
-// Xuất dữ liệu
-export { studentInfo, productsData, newsData, shoppingCart };
-
-// Thêm dữ liệu mẫu cho giỏ hàng (có thể xóa nếu muốn giỏ hàng trống mặc định)
-// shoppingCart = []; // Giỏ hàng trống mặc định
-
-// Hoặc thêm một sản phẩm mẫu để test
-// shoppingCart = [productsData[0]]; // Thêm sản phẩm đầu tiên vào giỏ hàng
-
-// Export như cũ
+// Xuất dữ liệu (CHỈ EXPORT 1 LẦN)
 export { studentInfo, productsData, newsData, shoppingCart };

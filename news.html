@@ -22,10 +22,11 @@
         </div>
         <nav class="nav-menu">
             <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Trang chủ</a>
+            <a href="products.html" class="nav-link"><i class="fas fa-gem"></i> Sản phẩm</a>
             <a href="news.html" class="nav-link active"><i class="fas fa-newspaper"></i> Tin tức</a>
-            <a href="#phongthuy" class="nav-link"><i class="fas fa-yin-yang"></i> Phong thủy</a>
-            <a href="#vanhoa" class="nav-link"><i class="fas fa-landmark"></i> Văn hóa</a>
-            <a href="#thitruong" class="nav-link"><i class="fas fa-chart-line"></i> Thị trường</a>
+            <a href="gio-hang.html" class="nav-link cart-link">
+                <i class="fas fa-shopping-cart"></i> Giỏ hàng <span class="cart-count">0</span>
+            </a>
         </nav>
         <button class="mobile-menu-btn" id="mobileMenuBtn">
             <i class="fas fa-bars"></i>
@@ -45,7 +46,7 @@
     </div>
 
     <!-- HERO NEWS (Trang tin tức) -->
-    <section class="hero-news">
+    <section class="hero-news" id="heroNews">
         <!-- Hero news được tải bằng JavaScript -->
     </section>
 
@@ -68,23 +69,8 @@
             <!-- BÀI VIẾT NỔI BẬT -->
             <div class="featured-news">
                 <h2 class="featured-title">Bài viết nổi bật</h2>
-                <div class="news-card" onclick="NewsPage.openArticle(1)" style="cursor: pointer;">
-                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80" 
-                         alt="Bài viết nổi bật" class="news-image">
-                    <div class="news-content">
-                        <span class="news-category-badge category-thitruong">
-                            <i class="fas fa-chart-line"></i> THỊ TRƯỜNG
-                        </span>
-                        <h3 class="news-title">Ngọc phỉ thúy Việt Nam: Tiềm năng và thách thức trên thị trường quốc tế</h3>
-                        <p class="news-excerpt">Phân tích chuyên sâu về vị thế của ngọc phỉ thúy Việt Nam trong bối cảnh cạnh tranh toàn cầu...</p>
-                        <div class="news-footer">
-                            <span class="news-date"><i class="far fa-calendar"></i> 12/04/2024</span>
-                            <span class="news-views"><i class="fas fa-eye"></i> 18.7K lượt xem</span>
-                            <a href="#" class="read-more" onclick="event.stopPropagation(); NewsPage.openArticle(1); return false;">
-                                Đọc tiếp <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
+                <div class="news-card" id="featuredArticle">
+                    <!-- Nội dung bài viết nổi bật -->
                 </div>
             </div>
 
@@ -96,22 +82,8 @@
                 </a>
             </div>
 
-            <div class="news-grid">
-                <div class="news-card" onclick="NewsPage.openArticle(8)">
-                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80" 
-                         alt="Trang sức truyền thống" class="news-image">
-                    <div class="news-content">
-                        <span class="news-category-badge category-vanhoa">
-                            <i class="fas fa-landmark"></i> VĂN HÓA
-                        </span>
-                        <h3 class="news-title">Trang sức ngọc trong đám cưới truyền thống Việt Nam</h3>
-                        <p class="news-excerpt">Vai trò và ý nghĩa của trang sức ngọc trong nghi lễ cưới hỏi truyền thống Việt Nam.</p>
-                        <div class="news-footer">
-                            <span class="news-date"><i class="far fa-calendar"></i> 08/04/2024</span>
-                            <span class="news-views"><i class="fas fa-eye"></i> 12.4K lượt xem</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="news-grid" id="cultureNews">
+                <!-- Tin văn hóa -->
             </div>
 
             <!-- PAGINATION -->
@@ -163,7 +135,7 @@
                     <i class="fas fa-envelope"></i> Nhận bản tin
                 </h3>
                 <p class="widget-text">Đăng ký để nhận tin tức mới nhất về phong thủy và ngọc quý</p>
-                <form class="newsletter-form" id="newsletterForm">
+                <form class="newsletter-form" id="newsletterFormSidebar">
                     <input type="email" placeholder="Email của bạn" required>
                     <button type="submit" class="newsletter-btn">
                         <i class="fas fa-paper-plane"></i> Đăng ký
@@ -288,7 +260,24 @@
         </button>
     </footer>
 
-    <!-- JavaScript (type="module" để import/export) -->
+    <!-- JavaScript -->
     <script type="module" src="script.js"></script>
+    <script>
+        // Cập nhật số lượng giỏ hàng
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+            
+            function updateCartCount() {
+                const cartCount = document.querySelector('.cart-count');
+                if (cartCount) {
+                    const cart = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
+                    cartCount.textContent = cart.length;
+                }
+            }
+            
+            // Cập nhật năm hiện tại
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+    </script>
 </body>
 </html>

@@ -74,7 +74,7 @@
             </div>
 
             <!-- CART WITH ITEMS -->
-            <div class="cart-with-items" id="cartWithItems">
+            <div class="cart-with-items" id="cartWithItems" style="display: none;">
                 <div class="cart-header">
                     <h2>Sản phẩm đã chọn (<span id="cartItemCount">0</span>)</h2>
                     <button class="clear-cart-btn" id="clearCart">
@@ -174,7 +174,7 @@
                     </div>
                     <div class="summary-row total">
                         <span>Tổng cộng:</span>
-                        <span id="totalAmount">0 VNĐ</span>
+                        <span id="totalAmount">30.000 VNĐ</span>
                     </div>
                 </div>
 
@@ -330,5 +330,27 @@
 
     <!-- JavaScript -->
     <script type="module" src="script.js"></script>
+    <script>
+        // Khởi tạo giỏ hàng ngay khi trang tải
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Trang giỏ hàng đã tải');
+            
+            // Khởi tạo module giỏ hàng
+            if (typeof CartPage !== 'undefined') {
+                CartPage.init();
+            }
+            
+            // Cập nhật số lượng giỏ hàng
+            updateCartCount();
+            
+            function updateCartCount() {
+                const cartCount = document.querySelector('.cart-count');
+                if (cartCount) {
+                    const cart = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
+                    cartCount.textContent = cart.length;
+                }
+            }
+        });
+    </script>
 </body>
 </html>
