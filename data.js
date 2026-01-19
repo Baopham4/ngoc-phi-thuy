@@ -11,14 +11,14 @@ const studentInfo = {
     project: "Website Ngọc Phỉ Thúy"
 };
 
-// Dữ liệu sản phẩm - DÙNG ẢNH CỦA BẠN
+// Dữ liệu sản phẩm - DÙNG PLACEHOLDER MÀU ĐẸP
 const productsData = [
     {
         id: 1,
         name: "Vòng Phỉ Thúy Lý Ngư",
         description: "Ngọc tự nhiên từ Myanmar, màu lục bảo thượng hạng. Thiết kế hình cá chép với ý nghĩa phong thủy vượng tài lộc.",
         price: "42.000.000 VNĐ",
-        image: "images/sanpham1.jpg", // Ảnh của bạn
+        image: "https://via.placeholder.com/400x300/00574b/FFFFFF?text=Vòng+Tay+Phỉ+Thúy", // Màu xanh ngọc
         badge: "BÁN CHẠY",
         category: "Vòng tay",
         material: "Ngọc phỉ thúy tự nhiên",
@@ -31,7 +31,7 @@ const productsData = [
         name: "Ngọc Phỉ Thúy Tuyết",
         description: "Đá trắng trong suốt từ vùng Kachin, vân tuyết độc bản. Chế tác tinh xảo, mang vẻ đẹp thuần khiết.",
         price: "85.500.000 VNĐ",
-        image: "images/sanpham2.jpg", // Ảnh của bạn
+        image: "https://via.placeholder.com/400x300/80cbc4/00574b?text=Ngọc+Tuyết+Trắng", // Màu xanh nhạt
         badge: "CAO CẤP",
         category: "Mặt ngọc",
         material: "Ngọc phỉ thúy tuyết trắng",
@@ -44,7 +44,7 @@ const productsData = [
         name: "Nhẫn Phỉ Thúy Rồng",
         description: "Kết hợp vàng 24K và ngọc phỉ thúy xanh lục từ Myanmar. Thiết kế rồng uốn lượn tinh xảo, quyền uy.",
         price: "68.750.000 VNĐ",
-        image: "images/sanpham3.jpg", // Ảnh của bạn
+        image: "https://via.placeholder.com/400x300/d4af37/00574b?text=Nhẫn+Vàng+Ngọc", // Màu vàng
         badge: "ĐỘC BẢN",
         category: "Nhẫn",
         material: "Ngọc phỉ thúy + Vàng 24K",
@@ -57,7 +57,7 @@ const productsData = [
         name: "Bông Tai Hoa Sen",
         description: "Đôi bông tai hình hoa sen cách điệu, kết hợp ngọc phỉ thúy và kim cương 0.5ct. Vẻ đẹp thanh tao.",
         price: "39.500.000 VNĐ",
-        image: "images/sanpham4.jpg", // Ảnh của bạn
+        image: "https://via.placeholder.com/400x300/26a69a/FFFFFF?text=Bông+Tai+Hoa+Sen", // Màu xanh lá
         badge: "ƯU ĐÃI",
         category: "Bông tai",
         material: "Ngọc phỉ thúy + Kim cương",
@@ -70,7 +70,7 @@ const productsData = [
         name: "Dây Chuyền Phỉ Thúy Viên Mãn",
         description: "Mặt dây chuyền hình tròn, biểu tượng của sự viên mãn. Ngọc màu lục bảo tự nhiên từ Myanmar.",
         price: "75.300.000 VNĐ",
-        image: "images/sanpham5.jpg", // Ảnh của bạn
+        image: "https://via.placeholder.com/400x300/00796b/FFFFFF?text=Dây+Chuyền+Ngọc", // Màu xanh đậm
         badge: "PHONG THỦY",
         category: "Dây chuyền",
         material: "Ngọc phỉ thúy tự nhiên",
@@ -83,7 +83,7 @@ const productsData = [
         name: "Vòng Tay Kim Tiền Ngọc Bích",
         description: "Chuỗi ngọc phỉ thúy hạng A kết hợp hạt vàng 24K. Mang ý nghĩa tài lộc, thịnh vượng trường tồn.",
         price: "125.000.000 VNĐ",
-        image: "images/sanpham6.jpg", // Ảnh của bạn
+        image: "https://via.placeholder.com/400x300/ffd700/00574b?text=Vòng+Tay+Vàng+Ngọc", // Màu vàng sáng
         badge: "ĐỘC QUYỀN",
         category: "Vòng tay",
         material: "Ngọc phỉ thúy + Vàng 24K",
@@ -93,7 +93,7 @@ const productsData = [
     }
 ];
 
-// Dữ liệu tin tức - DÙNG ẢNH CỦA BẠN
+// Dữ liệu tin tức - DÙNG PLACEHOLDER MÀU ĐẸP
 const newsData = {
     hero: {
         id: 1,
@@ -104,7 +104,7 @@ const newsData = {
         date: "15/04/2024",
         readTime: "8 phút",
         views: "25.4K",
-        image: "images/tintuchero.jpg" // Ảnh hero của bạn
+        image: "https://via.placeholder.com/800x400/00574b/FFFFFF?text=Tin+Tức+Phong+Thủy" // Hero lớn
     },
     
     breakingNews: [
@@ -122,7 +122,7 @@ const newsData = {
             category: "ngocquy",
             date: "14/04/2024",
             views: "18.2K",
-            image: "images/tintuc1.jpg" // Ảnh tin tức 1 của bạn
+            image: "https://via.placeholder.com/400x300/00796b/FFFFFF?text=Phân+biệt+Ngọc+Thật+Giả" // Xanh đậm
         },
         {
             id: 3,
@@ -131,7 +131,7 @@ const newsData = {
             category: "phongthuy",
             date: "13/04/2024",
             views: "22.5K",
-            image: "images/tintuc2.jpg" // Ảnh tin tức 2 của bạn
+            image: "https://via.placeholder.com/400x300/26a69a/FFFFFF?text=Tượng+Phong+Thủy" // Xanh lá
         },
         {
             id: 4,
@@ -140,7 +140,7 @@ const newsData = {
             category: "vanhoa",
             date: "12/04/2024",
             views: "15.8K",
-            image: "images/tintuc3.jpg" // Ảnh tin tức 3 của bạn
+            image: "https://via.placeholder.com/400x300/80cbc4/00574b?text=Lịch+sử+Ngọc+Bích" // Xanh nhạt
         }
     ],
     
