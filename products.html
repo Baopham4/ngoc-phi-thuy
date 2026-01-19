@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bộ Sưu Tập Ngọc Phỉ Thúy - Phỉ Thúy Chi Bảo</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS Chung -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Filter CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slider-range/css/range-slider.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header-main">
+        <div class="logo">
+            <i class="fas fa-gem"></i> PHỈ THÚY CHI BẢO
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Trang chủ</a>
+            <a href="products.html" class="nav-link active"><i class="fas fa-gem"></i> Sản phẩm</a>
+            <a href="news.html" class="nav-link"><i class="fas fa-newspaper"></i> Tin tức</a>
+            <a href="gio-hang.html" class="nav-link cart-link">
+                <i class="fas fa-shopping-cart"></i> Giỏ hàng <span class="cart-count">0</span>
+            </a>
+        </nav>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- HERO PRODUCTS -->
+    <section class="products-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">BỘ SƯU TẬP NGỌC QUÝ</h1>
+            <p class="hero-subtitle">Khám phá vẻ đẹp trường tồn của đá phỉ thúy tự nhiên</p>
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm sản phẩm..." id="productSearch">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="products-container">
+        <!-- SIDEBAR FILTERS -->
+        <aside class="products-sidebar">
+            <!-- BỘ LỌC -->
+            <div class="filter-section">
+                <h3 class="filter-title">
+                    <i class="fas fa-filter"></i> Bộ lọc
+                </h3>
+                
+                <!-- Danh mục -->
+                <div class="filter-group">
+                    <h4 class="filter-group-title">Danh mục</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="Vòng tay" checked>
+                            <span class="checkmark"></span>
+                            Vòng tay
+                            <span class="filter-count">12</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="Nhẫn">
+                            <span class="checkmark"></span>
+                            Nhẫn
+                            <span class="filter-count">8</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="Dây chuyền">
+                            <span class="checkmark"></span>
+                            Dây chuyền
+                            <span class="filter-count">6</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="Bông tai">
+                            <span class="checkmark"></span>
+                            Bông tai
+                            <span class="filter-count">4</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="Mặt ngọc">
+                            <span class="checkmark"></span>
+                            Mặt ngọc
+                            <span class="filter-count">3</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Khoảng giá -->
+                <div class="filter-group">
+                    <h4 class="filter-group-title">Khoảng giá</h4>
+                    <div class="price-range">
+                        <input type="range" min="0" max="500000000" value="0" class="range-slider" id="priceMin">
+                        <input type="range" min="0" max="500000000" value="500000000" class="range-slider" id="priceMax">
+                        <div class="price-values">
+                            <span id="minPrice">0 VNĐ</span>
+                            <span id="maxPrice">500.000.000 VNĐ</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chất liệu -->
+                <div class="filter-group">
+                    <h4 class="filter-group-title">Chất liệu</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="material" value="Ngọc phỉ thúy tự nhiên">
+                            <span class="checkmark"></span>
+                            Ngọc phỉ thúy tự nhiên
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="material" value="Ngọc phỉ thúy + Vàng">
+                            <span class="checkmark"></span>
+                            Kết hợp vàng
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="material" value="Ngọc phỉ thúy + Kim cương">
+                            <span class="checkmark"></span>
+                            Kết hợp kim cương
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Xuất xứ -->
+                <div class="filter-group">
+                    <h4 class="filter-group-title">Xuất xứ</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="origin" value="Myanmar">
+                            <span class="checkmark"></span>
+                            Myanmar
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="origin" value="Kachin">
+                            <span class="checkmark"></span>
+                            Kachin, Myanmar
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Nút lọc -->
+                <div class="filter-buttons">
+                    <button class="btn-primary" id="applyFilters">
+                        <i class="fas fa-check"></i> Áp dụng bộ lọc
+                    </button>
+                    <button class="btn-secondary" id="resetFilters">
+                        <i class="fas fa-redo"></i> Đặt lại
+                    </button>
+                </div>
+            </div>
+            
+            <!-- SẢN PHẨM NỔI BẬT -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">
+                    <i class="fas fa-fire"></i> Sản phẩm bán chạy
+                </h3>
+                <div class="featured-products-list">
+                    <!-- Sẽ được tải bằng JS -->
+                </div>
+            </div>
+            
+            <!-- THÔNG TIN SINH VIÊN -->
+            <div class="sidebar-widget student-info-widget">
+                <h3 class="widget-title">
+                    <i class="fas fa-user-graduate"></i> Thông tin dự án
+                </h3>
+                <div class="student-info">
+                    <div class="info-item">
+                        <span class="info-label">Họ tên:</span>
+                        <span class="info-value">Phạm Quốc Bảo</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">MSSV:</span>
+                        <span class="info-value">2274802010049</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Môn học:</span>
+                        <span class="info-value">Thiết kế Web</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Dự án:</span>
+                        <span class="info-value">Trang sản phẩm</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN PRODUCTS -->
+        <main class="products-main">
+            <!-- SORTING BAR -->
+            <div class="sorting-bar">
+                <div class="sorting-info">
+                    <p>Hiển thị <span id="productsCount">6</span> sản phẩm</p>
+                </div>
+                <div class="sorting-options">
+                    <select id="sortBy" class="sort-select">
+                        <option value="default">Sắp xếp mặc định</option>
+                        <option value="price-asc">Giá: Thấp đến cao</option>
+                        <option value="price-desc">Giá: Cao đến thấp</option>
+                        <option value="name-asc">Tên: A-Z</option>
+                        <option value="name-desc">Tên: Z-A</option>
+                    </select>
+                    <div class="view-options">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th-large"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCTS GRID/LIST -->
+            <div class="products-display" id="productsDisplay">
+                <div class="products-grid active" id="productsGrid">
+                    <!-- Sản phẩm sẽ được tải bằng JS -->
+                </div>
+                <div class="products-list" id="productsList">
+                    <!-- Sản phẩm dạng list sẽ được tải bằng JS -->
+                </div>
+            </div>
+
+            <!-- PAGINATION -->
+            <div class="pagination">
+                <a href="#" class="page-link prev"><i class="fas fa-chevron-left"></i></a>
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <a href="#" class="page-link next"><i class="fas fa-chevron-right"></i></a>
+            </div>
+
+            <!-- THÔNG TIN CHẤT LƯỢNG -->
+            <div class="quality-info">
+                <div class="quality-card">
+                    <i class="fas fa-award"></i>
+                    <h4>100% Ngọc Tự Nhiên</h4>
+                    <p>Kiểm định GIA Certified</p>
+                </div>
+                <div class="quality-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Bảo Hành 5 Năm</h4>
+                    <p>Cam kết chất lượng</p>
+                </div>
+                <div class="quality-card">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h4>Giao Hàng Toàn Quốc</h4>
+                    <p>Miễn phí > 5 triệu</p>
+                </div>
+                <div class="quality-card">
+                    <i class="fas fa-undo"></i>
+                    <h4>Đổi Trả 7 Ngày</h4>
+                    <p>Nếu không hài lòng</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER (Chung) -->
+    <footer class="footer-main">
+        <div class="footer-content">
+            <!-- THƯƠNG HIỆU -->
+            <div class="footer-column">
+                <h4 class="footer-title">
+                    <i class="fas fa-gem"></i> PHỈ THÚY CHI BẢO
+                </h4>
+                <p class="footer-text">
+                    Chuyên cung cấp ngọc phỉ thúy cao cấp, chế tác tinh xảo từ đá tự nhiên 100%.
+                </p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <!-- THÔNG TIN DỰ ÁN -->
+            <div class="footer-column">
+                <h4 class="footer-subtitle"><i class="fas fa-graduation-cap"></i> THÔNG TIN DỰ ÁN</h4>
+                <div class="student-info">
+                    <div class="info-item">
+                        <span class="info-label">Họ tên:</span>
+                        <span class="info-value">Phạm Quốc Bảo</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">MSSV:</span>
+                        <span class="info-value">2274802010049</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Môn học:</span>
+                        <span class="info-value">Thiết kế Web</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Dự án:</span>
+                        <span class="info-value">Trang sản phẩm</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- LIÊN HỆ -->
+            <div class="footer-column">
+                <h4 class="footer-subtitle"><i class="fas fa-headset"></i> LIÊN HỆ</h4>
+                <div class="contact-details">
+                    <p><i class="fas fa-phone"></i> <strong>Hotline:</strong> 0900 123 456</p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> info@phithuybao.vn</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Địa chỉ:</strong> TP. Hồ Chí Minh</p>
+                </div>
+            </div>
+            
+            <!-- NEWSLETTER -->
+            <div class="footer-column">
+                <h4 class="footer-subtitle"><i class="fas fa-newspaper"></i> NHẬN THÔNG TIN</h4>
+                <p class="footer-text">Đăng ký để nhận tin tức mới nhất</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Nhập email" required>
+                    <button type="submit" class="subscribe-btn">
+                        <i class="fas fa-paper-plane"></i> ĐĂNG KÝ
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>© 2024 PHỈ THÚY CHI BẢO. Tất cả các quyền được bảo lưu.</p>
+                <p class="student-note">
+                    <i class="fas fa-code"></i> Bài thực hành môn Thiết kế Web | Sinh viên: Phạm Quốc Bảo - MSSV: 2274802010049
+                </p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#">Chính sách bảo mật</a>
+                <a href="#">Điều khoản sử dụng</a>
+                <a href="#">Liên hệ quảng cáo</a>
+            </div>
+        </div>
+        
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </footer>
+
+    <!-- JavaScript -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>

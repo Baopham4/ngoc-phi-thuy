@@ -180,3 +180,12 @@ let shoppingCart = [];
 
 // Xuất dữ liệu
 export { studentInfo, productsData, newsData, shoppingCart };
+
+// Thêm dữ liệu mẫu cho giỏ hàng (có thể xóa nếu muốn giỏ hàng trống mặc định)
+// shoppingCart = []; // Giỏ hàng trống mặc định
+
+// Hoặc thêm một sản phẩm mẫu để test
+// shoppingCart = [productsData[0]]; // Thêm sản phẩm đầu tiên vào giỏ hàng
+
+// Export như cũ
+export { studentInfo, productsData, newsData, shoppingCart };
