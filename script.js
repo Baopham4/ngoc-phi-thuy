@@ -2,7 +2,7 @@
 // JAVASCRIPT CHUNG CHO CẢ 2 TRANG
 // =========================================== //
 
-import { studentInfo, productsData, newsData } from './data.js';
+import { studentInfo, productsData, newsData } from './sharedata.js';
 
 // Biến toàn cục
 let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
