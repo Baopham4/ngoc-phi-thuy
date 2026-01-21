@@ -11,23 +11,22 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS Chung -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- HEADER -->
     <header class="header-main">
         <div class="logo">
-            <i class="fas fa-shopping-cart"></i> PHỈ THÚY CHI BẢO
+            <i class="fas fa-shopping-cart"></i> GIỎ HÀNG
         </div>
         <nav class="nav-menu">
             <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Trang chủ</a>
-            <a href="san-pham.html" class="nav-link"><i class="fas fa-gem"></i> Sản phẩm</a>
-            <a href="tin-tuc.html" class="nav-link"><i class="fas fa-newspaper"></i> Tin tức</a>
+            <a href="products.html" class="nav-link"><i class="fas fa-gem"></i> Sản phẩm</a>
+            <a href="news.html" class="nav-link"><i class="fas fa-newspaper"></i> Tin tức</a>
             <a href="gio-hang.html" class="nav-link active cart-link">
                 <i class="fas fa-shopping-cart"></i> Giỏ hàng <span class="cart-count">0</span>
             </a>
-            <a href="lien-he.html" class="nav-link"><i class="fas fa-phone"></i> Liên hệ</a>
         </nav>
         <button class="mobile-menu-btn" id="mobileMenuBtn">
             <i class="fas fa-bars"></i>
@@ -36,27 +35,25 @@
 
     <!-- CART HERO -->
     <section class="cart-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">GIỎ HÀNG CỦA BẠN</h1>
-                <p class="hero-subtitle">Kiểm tra và hoàn tất đơn hàng</p>
-                <div class="cart-steps">
-                    <div class="step active">
-                        <div class="step-number">1</div>
-                        <div class="step-text">Giỏ hàng</div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-text">Thông tin</div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-text">Thanh toán</div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <div class="step-text">Hoàn tất</div>
-                    </div>
+        <div class="hero-content">
+            <h1 class="hero-title">GIỎ HÀNG CỦA BẠN</h1>
+            <p class="hero-subtitle">Kiểm tra và hoàn tất đơn hàng</p>
+            <div class="cart-steps">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Giỏ hàng</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Thông tin giao hàng</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Thanh toán</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-text">Hoàn tất</div>
                 </div>
             </div>
         </div>
@@ -64,267 +61,265 @@
 
     <!-- CART CONTENT -->
     <div class="cart-container">
-        <div class="container">
-            <div class="cart-layout">
-                <!-- CART ITEMS -->
-                <main class="cart-main">
-                    <!-- EMPTY CART STATE -->
-                    <div class="empty-cart" id="emptyCart">
-                        <i class="fas fa-shopping-cart"></i>
-                        <h3>Giỏ hàng trống</h3>
-                        <p>Bạn chưa có sản phẩm nào trong giỏ hàng</p>
-                        <a href="san-pham.html" class="btn-primary">
-                            <i class="fas fa-gem"></i> MUA SẮM NGAY
-                        </a>
-                    </div>
-
-                    <!-- CART WITH ITEMS -->
-                    <div class="cart-with-items" id="cartWithItems" style="display: none;">
-                        <div class="cart-header">
-                            <h2>Sản phẩm đã chọn (<span id="cartItemCount">0</span>)</h2>
-                            <button class="clear-cart-btn" id="clearCart">
-                                <i class="fas fa-trash"></i> Xóa tất cả
-                            </button>
-                        </div>
-
-                        <!-- CART ITEMS LIST -->
-                        <div class="cart-items" id="cartItems">
-                            <!-- Sẽ được tải bằng JavaScript -->
-                        </div>
-
-                        <!-- CART ACTIONS -->
-                        <div class="cart-actions">
-                            <a href="san-pham.html" class="continue-shopping">
-                                <i class="fas fa-arrow-left"></i> Tiếp tục mua sắm
-                            </a>
-                            <button class="btn-secondary" id="updateCart">
-                                <i class="fas fa-sync-alt"></i> Cập nhật giỏ hàng
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- THÔNG TIN VẬN CHUYỂN -->
-                    <div class="shipping-info">
-                        <h3><i class="fas fa-truck"></i> Thông tin vận chuyển</h3>
-                        <div class="shipping-options">
-                            <label class="shipping-option">
-                                <input type="radio" name="shipping" value="standard" checked>
-                                <span class="radio-check"></span>
-                                <div class="shipping-details">
-                                    <h4>Giao hàng tiêu chuẩn</h4>
-                                    <p>3-5 ngày làm việc</p>
-                                    <span class="shipping-price">30.000 VNĐ</span>
-                                </div>
-                            </label>
-                            <label class="shipping-option">
-                                <input type="radio" name="shipping" value="express">
-                                <span class="radio-check"></span>
-                                <div class="shipping-details">
-                                    <h4>Giao hàng nhanh</h4>
-                                    <p>1-2 ngày làm việc</p>
-                                    <span class="shipping-price">60.000 VNĐ</span>
-                                </div>
-                            </label>
-                            <label class="shipping-option">
-                                <input type="radio" name="shipping" value="free">
-                                <span class="radio-check"></span>
-                                <div class="shipping-details">
-                                    <h4>Miễn phí vận chuyển</h4>
-                                    <p>Đơn hàng từ 5.000.000 VNĐ</p>
-                                    <span class="shipping-price">0 VNĐ</span>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- MÃ GIẢM GIÁ -->
-                    <div class="coupon-section">
-                        <h3><i class="fas fa-tag"></i> Mã giảm giá</h3>
-                        <div class="coupon-input">
-                            <input type="text" placeholder="Nhập mã giảm giá" id="couponCode">
-                            <button class="btn-primary" id="applyCoupon">
-                                <i class="fas fa-check"></i> Áp dụng
-                            </button>
-                        </div>
-                        <div class="available-coupons">
-                            <p>Mã có sẵn:</p>
-                            <div class="coupon-tags">
-                                <span class="coupon-tag" data-code="WELCOME10">WELCOME10 - Giảm 10%</span>
-                                <span class="coupon-tag" data-code="FREESHIP">FREESHIP - Miễn phí ship</span>
-                                <span class="coupon-tag" data-code="VIP20">VIP20 - Giảm 20%</span>
-                            </div>
-                        </div>
-                    </div>
-                </main>
-
-                <!-- ORDER SUMMARY -->
-                <aside class="order-summary">
-                    <div class="summary-card">
-                        <h3 class="summary-title">
-                            <i class="fas fa-receipt"></i> Tóm tắt đơn hàng
-                        </h3>
-                        
-                        <div class="summary-details">
-                            <div class="summary-row">
-                                <span>Tạm tính:</span>
-                                <span id="subtotal">0 VNĐ</span>
-                            </div>
-                            <div class="summary-row">
-                                <span>Phí vận chuyển:</span>
-                                <span id="shippingFee">30.000 VNĐ</span>
-                            </div>
-                            <div class="summary-row">
-                                <span>Giảm giá:</span>
-                                <span id="discount">0 VNĐ</span>
-                            </div>
-                            <div class="summary-row total">
-                                <span>Tổng cộng:</span>
-                                <span id="totalAmount">30.000 VNĐ</span>
-                            </div>
-                        </div>
-
-                        <!-- THÔNG TIN THANH TOÁN -->
-                        <div class="payment-methods">
-                            <h4><i class="fas fa-credit-card"></i> Phương thức thanh toán</h4>
-                            <div class="payment-options">
-                                <label class="payment-option">
-                                    <input type="radio" name="payment" value="cod" checked>
-                                    <span class="radio-check"></span>
-                                    <i class="fas fa-money-bill-wave"></i>
-                                    <span>Thanh toán khi nhận hàng</span>
-                                </label>
-                                <label class="payment-option">
-                                    <input type="radio" name="payment" value="banking">
-                                    <span class="radio-check"></span>
-                                    <i class="fas fa-university"></i>
-                                    <span>Chuyển khoản ngân hàng</span>
-                                </label>
-                                <label class="payment-option">
-                                    <input type="radio" name="payment" value="momo">
-                                    <span class="radio-check"></span>
-                                    <i class="fas fa-mobile-alt"></i>
-                                    <span>Ví điện tử MoMo</span>
-                                </label>
-                                <label class="payment-option">
-                                    <input type="radio" name="payment" value="credit">
-                                    <span class="radio-check"></span>
-                                    <i class="fas fa-credit-card"></i>
-                                    <span>Thẻ tín dụng/ghi nợ</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- NÚT THANH TOÁN -->
-                        <button class="checkout-btn" id="checkoutBtn">
-                            <i class="fas fa-lock"></i> TIẾN HÀNH THANH TOÁN
-                        </button>
-
-                        <!-- BẢO MẬT -->
-                        <div class="security-info">
-                            <p><i class="fas fa-shield-alt"></i> Giao dịch bảo mật 100%</p>
-                            <p><i class="fas fa-lock"></i> Thông tin được mã hóa</p>
-                        </div>
-
-                        <!-- HỖ TRỢ -->
-                        <div class="support-info">
-                            <h4><i class="fas fa-headset"></i> Cần hỗ trợ?</h4>
-                            <p>Hotline: <strong>0900 123 456</strong></p>
-                            <p>Email: <strong>support@phithuybao.vn</strong></p>
-                            <p>Giờ làm việc: 8:00 - 18:00 (Thứ 2 - Thứ 7)</p>
-                        </div>
-                    </div>
-
-                    <!-- THÔNG TIN SINH VIÊN -->
-                    <div class="student-info-card">
-                        <h4><i class="fas fa-user-graduate"></i> Thông tin sinh viên</h4>
-                        <div class="student-details">
-                            <p><strong>Họ tên:</strong> Phạm Quốc Bảo</p>
-                            <p><strong>MSSV:</strong> 2274802010049</p>
-                            <p><strong>Môn học:</strong> Thiết kế Web</p>
-                            <p><strong>Dự án:</strong> Trang giỏ hàng</p>
-                            <p><strong>Lớp:</strong> DHTMDTT/TT</p>
-                        </div>
-                    </div>
-                </aside>
+        <!-- CART ITEMS -->
+        <main class="cart-main">
+            <!-- EMPTY CART STATE -->
+            <div class="empty-cart" id="emptyCart">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>Giỏ hàng trống</h3>
+                <p>Bạn chưa có sản phẩm nào trong giỏ hàng</p>
+                <a href="products.html" class="btn-primary">
+                    <i class="fas fa-gem"></i> MUA SẮM NGAY
+                </a>
             </div>
-        </div>
+
+            <!-- CART WITH ITEMS -->
+            <div class="cart-with-items" id="cartWithItems" style="display: none;">
+                <div class="cart-header">
+                    <h2>Sản phẩm đã chọn (<span id="cartItemCount">0</span>)</h2>
+                    <button class="clear-cart-btn" id="clearCart">
+                        <i class="fas fa-trash"></i> Xóa tất cả
+                    </button>
+                </div>
+
+                <!-- CART ITEMS LIST -->
+                <div class="cart-items" id="cartItems">
+                    <!-- Sẽ được tải bằng JavaScript -->
+                </div>
+
+                <!-- CART ACTIONS -->
+                <div class="cart-actions">
+                    <a href="products.html" class="continue-shopping">
+                        <i class="fas fa-arrow-left"></i> Tiếp tục mua sắm
+                    </a>
+                    <button class="btn-secondary" id="updateCart">
+                        <i class="fas fa-sync-alt"></i> Cập nhật giỏ hàng
+                    </button>
+                </div>
+            </div>
+
+            <!-- THÔNG TIN VẬN CHUYỂN -->
+            <div class="shipping-info">
+                <h3><i class="fas fa-truck"></i> Thông tin vận chuyển</h3>
+                <div class="shipping-options">
+                    <label class="shipping-option">
+                        <input type="radio" name="shipping" value="standard" checked>
+                        <span class="radio-check"></span>
+                        <div class="shipping-details">
+                            <h4>Giao hàng tiêu chuẩn</h4>
+                            <p>3-5 ngày làm việc</p>
+                            <span class="shipping-price">30.000 VNĐ</span>
+                        </div>
+                    </label>
+                    <label class="shipping-option">
+                        <input type="radio" name="shipping" value="express">
+                        <span class="radio-check"></span>
+                        <div class="shipping-details">
+                            <h4>Giao hàng nhanh</h4>
+                            <p>1-2 ngày làm việc</p>
+                            <span class="shipping-price">60.000 VNĐ</span>
+                        </div>
+                    </label>
+                    <label class="shipping-option">
+                        <input type="radio" name="shipping" value="free">
+                        <span class="radio-check"></span>
+                        <div class="shipping-details">
+                            <h4>Miễn phí vận chuyển</h4>
+                            <p>Đơn hàng từ 5.000.000 VNĐ</p>
+                            <span class="shipping-price">0 VNĐ</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- MÃ GIẢM GIÁ -->
+            <div class="coupon-section">
+                <h3><i class="fas fa-tag"></i> Mã giảm giá</h3>
+                <div class="coupon-input">
+                    <input type="text" placeholder="Nhập mã giảm giá" id="couponCode">
+                    <button class="btn-primary" id="applyCoupon">
+                        <i class="fas fa-check"></i> Áp dụng
+                    </button>
+                </div>
+                <div class="available-coupons">
+                    <p>Mã có sẵn:</p>
+                    <div class="coupon-tags">
+                        <span class="coupon-tag" data-code="WELCOME10">WELCOME10 - Giảm 10%</span>
+                        <span class="coupon-tag" data-code="FREESHIP">FREESHIP - Miễn phí ship</span>
+                        <span class="coupon-tag" data-code="VIP20">VIP20 - Giảm 20%</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- ORDER SUMMARY -->
+        <aside class="order-summary">
+            <div class="summary-card">
+                <h3 class="summary-title">
+                    <i class="fas fa-receipt"></i> Tóm tắt đơn hàng
+                </h3>
+                
+                <div class="summary-details">
+                    <div class="summary-row">
+                        <span>Tạm tính:</span>
+                        <span id="subtotal">0 VNĐ</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Phí vận chuyển:</span>
+                        <span id="shippingFee">30.000 VNĐ</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Giảm giá:</span>
+                        <span id="discount">0 VNĐ</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Tổng cộng:</span>
+                        <span id="totalAmount">30.000 VNĐ</span>
+                    </div>
+                </div>
+
+                <!-- THÔNG TIN THANH TOÁN -->
+                <div class="payment-methods">
+                    <h4><i class="fas fa-credit-card"></i> Phương thức thanh toán</h4>
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="cod" checked>
+                            <span class="radio-check"></span>
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>Thanh toán khi nhận hàng</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="banking">
+                            <span class="radio-check"></span>
+                            <i class="fas fa-university"></i>
+                            <span>Chuyển khoản ngân hàng</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="momo">
+                            <span class="radio-check"></span>
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Ví điện tử MoMo</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="credit">
+                            <span class="radio-check"></span>
+                            <i class="fas fa-credit-card"></i>
+                            <span>Thẻ tín dụng/ghi nợ</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- NÚT THANH TOÁN -->
+                <button class="checkout-btn" id="checkoutBtn">
+                    <i class="fas fa-lock"></i> TIẾN HÀNH THANH TOÁN
+                </button>
+
+                <!-- BẢO MẬT -->
+                <div class="security-info">
+                    <p><i class="fas fa-shield-alt"></i> Giao dịch bảo mật 100%</p>
+                    <p><i class="fas fa-lock"></i> Thông tin được mã hóa</p>
+                </div>
+
+                <!-- HỖ TRỢ -->
+                <div class="support-info">
+                    <h4><i class="fas fa-headset"></i> Cần hỗ trợ?</h4>
+                    <p>Hotline: <strong>0900 123 456</strong></p>
+                    <p>Email: <strong>support@phithuybao.vn</strong></p>
+                    <p>Giờ làm việc: 8:00 - 18:00 (Thứ 2 - Thứ 7)</p>
+                </div>
+            </div>
+
+            <!-- THÔNG TIN SINH VIÊN -->
+            <div class="student-info-card">
+                <h4><i class="fas fa-user-graduate"></i> Thông tin sinh viên</h4>
+                <div class="student-details">
+                    <p><strong>Họ tên:</strong> Phạm Quốc Bảo</p>
+                    <p><strong>MSSV:</strong> 2274802010049</p>
+                    <p><strong>Môn học:</strong> Thiết kế Web</p>
+                    <p><strong>Dự án:</strong> Trang giỏ hàng</p>
+                    <p><strong>Lớp:</strong> DHTMDTT/TT</p>
+                </div>
+            </div>
+        </aside>
     </div>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (Chung) -->
     <footer class="footer-main">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h4 class="footer-title">
-                        <i class="fas fa-gem"></i> PHỈ THÚY CHI BẢO
-                    </h4>
-                    <p class="footer-text">
-                        Chuyên cung cấp ngọc phỉ thúy cao cấp, chế tác tinh xảo từ đá tự nhiên 100%.
-                    </p>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h4 class="footer-subtitle"><i class="fas fa-graduation-cap"></i> THÔNG TIN DỰ ÁN</h4>
-                    <div class="student-info">
-                        <div class="info-item">
-                            <span class="info-label">Họ tên:</span>
-                            <span class="info-value">Phạm Quốc Bảo</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">MSSV:</span>
-                            <span class="info-value">2274802010049</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Môn học:</span>
-                            <span class="info-value">Thiết kế Web</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Dự án:</span>
-                            <span class="info-value">Trang giỏ hàng</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h4 class="footer-subtitle"><i class="fas fa-headset"></i> LIÊN HỆ</h4>
-                    <div class="contact-details">
-                        <p><i class="fas fa-phone"></i> <strong>Hotline:</strong> 0900 123 456</p>
-                        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> info@phithuybao.vn</p>
-                        <p><i class="fas fa-map-marker-alt"></i> <strong>Địa chỉ:</strong> TP. Hồ Chí Minh</p>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h4 class="footer-subtitle"><i class="fas fa-newspaper"></i> NHẬN THÔNG TIN</h4>
-                    <p class="footer-text">Đăng ký để nhận tin tức mới nhất</p>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" placeholder="Nhập email" required>
-                        <button type="submit" class="subscribe-btn">
-                            <i class="fas fa-paper-plane"></i> ĐĂNG KÝ
-                        </button>
-                    </form>
+        <div class="footer-content">
+            <!-- THƯƠNG HIỆU -->
+            <div class="footer-column">
+                <h4 class="footer-title">
+                    <i class="fas fa-gem"></i> PHỈ THÚY CHI BẢO
+                </h4>
+                <p class="footer-text">
+                    Chuyên cung cấp ngọc phỉ thúy cao cấp, chế tác tinh xảo từ đá tự nhiên 100%.
+                </p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <div class="footer-copyright">
-                    <p>© 2024 PHỈ THÚY CHI BẢO. Tất cả các quyền được bảo lưu.</p>
-                    <p class="student-note">
-                        <i class="fas fa-code"></i> Bài thực hành môn Thiết kế Web | Sinh viên: Phạm Quốc Bảo - MSSV: 2274802010049
-                    </p>
+            <!-- THÔNG TIN DỰ ÁN -->
+            <div class="footer-column">
+                <h4 class="footer-subtitle"><i class="fas fa-graduation-cap"></i> THÔNG TIN DỰ ÁN</h4>
+                <div class="student-info">
+                    <div class="info-item">
+                        <span class="info-label">Họ tên:</span>
+                        <span class="info-value">Phạm Quốc Bảo</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">MSSV:</span>
+                        <span class="info-value">2274802010049</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Môn học:</span>
+                        <span class="info-value">Thiết kế Web</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Dự án:</span>
+                        <span class="info-value">Trang giỏ hàng</span>
+                    </div>
                 </div>
-                
-                <div class="footer-links">
-                    <a href="#">Chính sách bảo mật</a>
-                    <a href="#">Điều khoản sử dụng</a>
-                    <a href="#">Liên hệ quảng cáo</a>
+            </div>
+            
+            <!-- LIÊN HỆ -->
+            <div class="footer-column">
+                <h4 class="footer-subtitle"><i class="fas fa-headset"></i> LIÊN HỆ</h4>
+                <div class="contact-details">
+                    <p><i class="fas fa-phone"></i> <strong>Hotline:</strong> 0900 123 456</p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> info@phithuybao.vn</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Địa chỉ:</strong> TP. Hồ Chí Minh</p>
                 </div>
+            </div>
+            
+            <!-- NEWSLETTER -->
+            <div class="footer-column">
+                <h4 class="footer-subtitle"><i class="fas fa-newspaper"></i> NHẬN THÔNG TIN</h4>
+                <p class="footer-text">Đăng ký để nhận tin tức mới nhất</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Nhập email" required>
+                    <button type="submit" class="subscribe-btn">
+                        <i class="fas fa-paper-plane"></i> ĐĂNG KÝ
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>© 2024 PHỈ THÚY CHI BẢO. Tất cả các quyền được bảo lưu.</p>
+                <p class="student-note">
+                    <i class="fas fa-code"></i> Bài thực hành môn Thiết kế Web | Sinh viên: Phạm Quốc Bảo - MSSV: 2274802010049
+                </p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#">Chính sách bảo mật</a>
+                <a href="#">Điều khoản sử dụng</a>
+                <a href="#">Liên hệ quảng cáo</a>
             </div>
         </div>
         
@@ -334,367 +329,28 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/data.js"></script>
-    <script src="js/script.js"></script>
+    <script type="module" src="script.js"></script>
     <script>
+        // Khởi tạo giỏ hàng ngay khi trang tải
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('Trang giỏ hàng đã tải');
+            
+            // Khởi tạo module giỏ hàng
+            if (typeof CartPage !== 'undefined') {
+                CartPage.init();
+            }
+            
             // Cập nhật số lượng giỏ hàng
             updateCartCount();
-            
-            // Tải giỏ hàng
-            loadCart();
-            
-            // Khởi tạo sự kiện
-            initCartEvents();
             
             function updateCartCount() {
                 const cartCount = document.querySelector('.cart-count');
                 if (cartCount) {
-                    const cart = getCart();
+                    const cart = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
                     cartCount.textContent = cart.length;
                 }
             }
-            
-            function getCart() {
-                return JSON.parse(localStorage.getItem('shoppingCart') || '[]');
-            }
-            
-            function saveCart(cart) {
-                localStorage.setItem('shoppingCart', JSON.stringify(cart));
-                updateCartCount();
-                updateCartSummary();
-            }
-            
-            function loadCart() {
-                const cart = getCart();
-                const emptyCart = document.getElementById('emptyCart');
-                const cartWithItems = document.getElementById('cartWithItems');
-                
-                if (cart.length === 0) {
-                    emptyCart.style.display = 'block';
-                    cartWithItems.style.display = 'none';
-                    return;
-                }
-                
-                emptyCart.style.display = 'none';
-                cartWithItems.style.display = 'block';
-                
-                const cartItemsContainer = document.getElementById('cartItems');
-                let cartHTML = '';
-                
-                cart.forEach((item, index) => {
-                    cartHTML += `
-                        <div class="cart-item" data-index="${index}">
-                            <img src="${item.image}" alt="${item.name}"
-                                 onerror="this.onerror=null; this.src='https://via.placeholder.com/120x120/00796B/FFFFFF?text=SP'">
-                            <div class="cart-item-info">
-                                <h3 class="cart-item-title">${item.name}</h3>
-                                <p class="cart-item-desc">${item.description.substring(0, 100)}...</p>
-                                <div class="cart-item-meta">
-                                    <span><i class="fas fa-gem"></i> ${item.category}</span>
-                                    <span><i class="fas fa-map-marker-alt"></i> ${item.origin}</span>
-                                    <span><i class="fas fa-award"></i> ${item.certification}</span>
-                                </div>
-                                <div class="cart-item-actions">
-                                    <div class="quantity-control">
-                                        <button class="quantity-btn minus" onclick="updateQuantity(${index}, -1)">-</button>
-                                        <input type="text" class="quantity-input" value="${item.quantity || 1}" readonly>
-                                        <button class="quantity-btn plus" onclick="updateQuantity(${index}, 1)">+</button>
-                                    </div>
-                                    <div class="cart-item-price">${item.price}</div>
-                                </div>
-                            </div>
-                            <button class="remove-item" onclick="removeItem(${index})">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    `;
-                });
-                
-                cartItemsContainer.innerHTML = cartHTML;
-                updateCartItemCount();
-                updateCartSummary();
-            }
-            
-            function initCartEvents() {
-                // Clear cart
-                document.getElementById('clearCart').addEventListener('click', function() {
-                    if (confirm('Bạn có chắc chắn muốn xóa tất cả sản phẩm khỏi giỏ hàng?')) {
-                        localStorage.removeItem('shoppingCart');
-                        showNotification('Đã xóa tất cả sản phẩm', 'success');
-                        loadCart();
-                        updateCartCount();
-                    }
-                });
-                
-                // Update cart
-                document.getElementById('updateCart').addEventListener('click', function() {
-                    showNotification('Giỏ hàng đã được cập nhật', 'success');
-                });
-                
-                // Coupon
-                document.getElementById('applyCoupon').addEventListener('click', applyCoupon);
-                document.querySelectorAll('.coupon-tag').forEach(tag => {
-                    tag.addEventListener('click', function() {
-                        const code = this.dataset.code;
-                        document.getElementById('couponCode').value = code;
-                        applyCoupon(code);
-                    });
-                });
-                
-                // Shipping options
-                document.querySelectorAll('input[name="shipping"]').forEach(option => {
-                    option.addEventListener('change', updateCartSummary);
-                });
-                
-                // Checkout
-                document.getElementById('checkoutBtn').addEventListener('click', checkout);
-                
-                // Newsletter
-                document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const email = this.querySelector('input[type="email"]').value;
-                    if (email) {
-                        showNotification('Đăng ký nhận tin thành công!', 'success');
-                        this.reset();
-                    }
-                });
-            }
-            
-            function updateCartItemCount() {
-                const countElement = document.getElementById('cartItemCount');
-                if (countElement) {
-                    const cart = getCart();
-                    let totalItems = 0;
-                    cart.forEach(item => {
-                        totalItems += item.quantity || 1;
-                    });
-                    countElement.textContent = totalItems;
-                }
-            }
-            
-            function updateCartSummary() {
-                const cart = getCart();
-                let subtotal = 0;
-                
-                cart.forEach(item => {
-                    const price = extractPrice(item.price);
-                    const quantity = item.quantity || 1;
-                    subtotal += price * quantity;
-                });
-                
-                // Calculate shipping
-                const selectedShipping = document.querySelector('input[name="shipping"]:checked');
-                let shippingFee = 30000;
-                
-                if (selectedShipping) {
-                    switch(selectedShipping.value) {
-                        case 'standard':
-                            shippingFee = 30000;
-                            break;
-                        case 'express':
-                            shippingFee = 60000;
-                            break;
-                        case 'free':
-                            shippingFee = subtotal >= 5000000 ? 0 : 30000;
-                            break;
-                    }
-                }
-                
-                // Calculate discount
-                let discountAmount = 0;
-                const couponData = localStorage.getItem('appliedCoupon');
-                if (couponData) {
-                    const { discount } = JSON.parse(couponData);
-                    discountAmount = subtotal * discount;
-                }
-                
-                // Calculate total
-                const total = subtotal + shippingFee - discountAmount;
-                
-                // Update DOM
-                document.getElementById('subtotal').textContent = formatPrice(subtotal) + ' VNĐ';
-                document.getElementById('shippingFee').textContent = formatPrice(shippingFee) + ' VNĐ';
-                document.getElementById('discount').textContent = '-' + formatPrice(discountAmount) + ' VNĐ';
-                document.getElementById('totalAmount').textContent = formatPrice(total) + ' VNĐ';
-            }
-            
-            function applyCoupon() {
-                const codeInput = document.getElementById('couponCode');
-                const code = codeInput.value.trim().toUpperCase();
-                
-                let discount = 0;
-                let message = '';
-                
-                switch(code) {
-                    case 'WELCOME10':
-                        discount = 0.1;
-                        message = 'Áp dụng thành công mã WELCOME10 - Giảm 10%';
-                        break;
-                    case 'FREESHIP':
-                        document.querySelector('input[name="shipping"][value="free"]').checked = true;
-                        message = 'Áp dụng thành công mã FREESHIP - Miễn phí vận chuyển';
-                        break;
-                    case 'VIP20':
-                        discount = 0.2;
-                        message = 'Áp dụng thành công mã VIP20 - Giảm 20%';
-                        break;
-                    default:
-                        showNotification('Mã giảm giá không hợp lệ', 'error');
-                        return;
-                }
-                
-                localStorage.setItem('appliedCoupon', JSON.stringify({ code, discount }));
-                updateCartSummary();
-                showNotification(message, 'success');
-                codeInput.value = '';
-            }
-            
-            function checkout() {
-                const cart = getCart();
-                if (cart.length === 0) {
-                    showNotification('Giỏ hàng trống. Vui lòng thêm sản phẩm!', 'error');
-                    return;
-                }
-                
-                const selectedPayment = document.querySelector('input[name="payment"]:checked')?.value || 'cod';
-                showCheckoutModal(selectedPayment);
-            }
-            
-            function showCheckoutModal(paymentMethod) {
-                const modal = document.createElement('div');
-                modal.className = 'product-modal active';
-                modal.innerHTML = `
-                    <div class="modal-overlay"></div>
-                    <div class="modal-content">
-                        <button class="modal-close"><i class="fas fa-times"></i></button>
-                        <div class="modal-checkout">
-                            <i class="fas fa-check-circle"></i>
-                            <h2>ĐẶT HÀNG THÀNH CÔNG!</h2>
-                            
-                            <div class="order-summary-modal">
-                                <h3><i class="fas fa-receipt"></i> Thông tin đơn hàng</h3>
-                                <p><strong>Mã đơn hàng:</strong> DH${Date.now().toString().slice(-8)}</p>
-                                <p><strong>Số lượng sản phẩm:</strong> ${getCart().length}</p>
-                                <p><strong>Phương thức thanh toán:</strong> ${getPaymentMethodName(paymentMethod)}</p>
-                                <p><strong>Tổng tiền:</strong> <span id="modalTotal">${document.getElementById('totalAmount').textContent}</span></p>
-                                <p><strong>Trạng thái:</strong> <span class="status-processing">Đang xử lý</span></p>
-                            </div>
-                            
-                            <p>Cảm ơn bạn đã mua hàng! Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.</p>
-                            
-                            <div class="checkout-buttons">
-                                <button class="btn-primary" onclick="completeCheckout()">
-                                    <i class="fas fa-home"></i> VỀ TRANG CHỦ
-                                </button>
-                                <button class="btn-secondary" onclick="window.print()">
-                                    <i class="fas fa-print"></i> IN HÓA ĐƠN
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                
-                document.body.appendChild(modal);
-                
-                // Setup close events
-                const closeBtn = modal.querySelector('.modal-close');
-                const overlay = modal.querySelector('.modal-overlay');
-                
-                const closeModal = () => modal.classList.remove('active');
-                
-                closeBtn.addEventListener('click', closeModal);
-                overlay.addEventListener('click', closeModal);
-                
-                // Close on ESC
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape' && modal.classList.contains('active')) {
-                        closeModal();
-                    }
-                });
-            }
-            
-            function getPaymentMethodName(method) {
-                const methods = {
-                    'cod': 'Thanh toán khi nhận hàng',
-                    'banking': 'Chuyển khoản ngân hàng',
-                    'momo': 'Ví điện tử MoMo',
-                    'credit': 'Thẻ tín dụng/ghi nợ'
-                };
-                return methods[method] || 'Chưa chọn';
-            }
-            
-            // Utility functions
-            function extractPrice(priceString) {
-                if (!priceString) return 0;
-                const num = priceString.replace(/[^0-9]/g, '');
-                return parseInt(num) || 0;
-            }
-            
-            function formatPrice(price) {
-                return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-            }
-            
-            function showNotification(message, type = 'info') {
-                const notification = document.createElement('div');
-                notification.className = `notification ${type}`;
-                
-                const icon = type === 'success' ? 'fa-check-circle' : 
-                            type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle';
-                
-                notification.innerHTML = `
-                    <i class="fas ${icon}"></i>
-                    <span>${message}</span>
-                `;
-                
-                document.body.appendChild(notification);
-                
-                setTimeout(() => {
-                    notification.style.animation = 'slideInRight 0.4s ease-out reverse';
-                    setTimeout(() => notification.remove(), 400);
-                }, 5000);
-            }
         });
-        
-        // Global functions
-        function updateQuantity(index, change) {
-            let cart = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
-            
-            if (cart[index]) {
-                const newQuantity = (cart[index].quantity || 1) + change;
-                if (newQuantity > 0) {
-                    cart[index].quantity = newQuantity;
-                    localStorage.setItem('shoppingCart', JSON.stringify(cart));
-                    location.reload(); // Reload to update display
-                } else {
-                    removeItem(index);
-                }
-            }
-        }
-        
-        function removeItem(index) {
-            if (confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')) {
-                let cart = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
-                cart.splice(index, 1);
-                localStorage.setItem('shoppingCart', JSON.stringify(cart));
-                location.reload(); // Reload to update display
-            }
-        }
-        
-        function completeCheckout() {
-            // Clear cart after successful checkout
-            localStorage.removeItem('shoppingCart');
-            localStorage.removeItem('appliedCoupon');
-            
-            // Close modal
-            const modal = document.querySelector('.product-modal.active');
-            if (modal) modal.classList.remove('active');
-            
-            // Redirect to home page
-            setTimeout(() => {
-                window.location.href = 'index.html';
-            }, 500);
-        }
     </script>
 </body>
 </html>

@@ -11,41 +11,40 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS Chung -->
+    <link rel="stylesheet" href="style.css">
     
     <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
-    <!-- HEADER -->
+    <!-- HEADER (Chung) -->
     <header class="header-main">
         <div class="logo">
             <i class="fas fa-gem"></i> PHỈ THÚY CHI BẢO
         </div>
         <nav class="nav-menu">
             <a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Trang chủ</a>
-            <a href="san-pham.html" class="nav-link"><i class="fas fa-gem"></i> Sản phẩm</a>
-            <a href="tin-tuc.html" class="nav-link"><i class="fas fa-newspaper"></i> Tin tức</a>
+            <a href="products.html" class="nav-link"><i class="fas fa-gem"></i> Sản phẩm</a>
+            <a href="news.html" class="nav-link"><i class="fas fa-newspaper"></i> Tin tức</a>
             <a href="gio-hang.html" class="nav-link cart-link">
                 <i class="fas fa-shopping-cart"></i> Giỏ hàng <span class="cart-count">0</span>
             </a>
-            <a href="lien-he.html" class="nav-link"><i class="fas fa-phone"></i> Liên hệ</a>
         </nav>
         <button class="mobile-menu-btn" id="mobileMenuBtn">
             <i class="fas fa-bars"></i>
         </button>
     </header>
 
-    <!-- HERO BANNER -->
+    <!-- HERO BANNER (Trang chủ) -->
     <section class="hero-section">
         <div id="particles-js"></div>
         <div class="hero-content">
             <h1 class="hero-title">TINH HOA THẠCH NGỌC</h1>
             <p class="hero-subtitle">VẺ ĐẸP TRƯỜNG TỒN VƯỢT THỜI GIAN</p>
             <div class="btn-container">
-                <a href="san-pham.html" class="btn-primary"><i class="fas fa-gem"></i> XEM BỘ SƯU TẬP</a>
-                <a href="lien-he.html" class="btn-secondary"><i class="fas fa-comments"></i> TƯ VẤN NGAY</a>
+                <a href="products.html" class="btn-primary"><i class="fas fa-gem"></i> XEM BỘ SƯU TẬP</a>
+                <a href="#contact" class="btn-secondary"><i class="fas fa-comments"></i> TƯ VẤN NGAY</a>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -53,217 +52,153 @@
         </div>
     </section>
 
-    <!-- DANH MỤC SẢN PHẨM -->
-    <section class="categories-section" id="categories">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-label">DANH MỤC SẢN PHẨM</p>
-                <h2 class="section-title">Bộ Sưu Tập Cao Cấp</h2>
-                <div class="divider"></div>
-                <p class="section-subtitle">Khám phá những tác phẩm nghệ thuật được chế tác tinh xảo từ ngọc phỉ thúy tự nhiên</p>
+    <!-- SẢN PHẨM NỔI BẬT (Trang chủ) -->
+    <main class="main-content" id="products">
+        <div class="section-header">
+            <p class="section-label">BST MỚI NHẤT</p>
+            <h2 class="section-title">Sản Phẩm Phỉ Thúy Nổi Bật</h2>
+            <div class="divider"></div>
+            <p class="section-subtitle">Mỗi viên ngọc là một tác phẩm nghệ thuật độc bản</p>
+        </div>
+        
+        <div class="products-grid" id="productsContainer">
+            <!-- Sản phẩm được tải bằng JavaScript -->
+        </div>
+        
+        <!-- TÍNH NĂNG NỔI BẬT (Trang chủ) -->
+        <div class="features-section">
+            <div class="feature-box">
+                <i class="fas fa-award feature-icon"></i>
+                <h3 class="feature-title">Chất Lượng Cao</h3>
+                <p class="feature-desc">100% đá tự nhiên, kiểm định uy tín</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-handshake feature-icon"></i>
+                <h3 class="feature-title">Bảo Hành 5 Năm</h3>
+                <p class="feature-desc">Cam kết chất lượng lâu dài</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-shipping-fast feature-icon"></i>
+                <h3 class="feature-title">Giao Hàng Toàn Quốc</h3>
+                <p class="feature-desc">Miễn phí vận chuyển đơn >5 triệu</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-gem feature-icon"></i>
+                <h3 class="feature-title">Độc Bản</h3>
+                <p class="feature-desc">Mỗi sản phẩm là duy nhất</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- LIÊN HỆ (Trang chủ) -->
+    <section class="contact-section" id="contact">
+        <div class="section-header">
+            <p class="section-label">LIÊN HỆ</p>
+            <h2 class="section-title">Kết Nối Với Chúng Tôi</h2>
+            <div class="divider"></div>
+        </div>
+        
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3><i class="fas fa-store"></i> Showroom</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Nguyễn Văn Linh, Quận 7, TP.HCM</p>
+                <p><i class="fas fa-clock"></i> 8:00 - 18:00 (Thứ 2 - Thứ 7)</p>
+                <p><i class="fas fa-phone"></i> 0900 123 456</p>
+                <p><i class="fas fa-envelope"></i> info@phithuybao.vn</p>
             </div>
             
-            <div class="categories-grid">
-                <!-- Dây chuyền -->
-                <div class="category-card" data-category="daychuyen">
-                    <div class="category-img-container">
-                        <img src="images/daychuyen1.jpg" alt="Dây chuyền phỉ thúy" class="category-img"
-                             onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/00796B/FFFFFF?text=Dây+Chuyền'">
-                    </div>
-                    <div class="category-info">
-                        <div class="category-icon">
-                            <i class="fas fa-link"></i>
-                        </div>
-                        <h3 class="category-name">Dây Chuyền</h3>
-                        <p class="category-description">Dây chuyền ngọc phỉ thúy tự nhiên với thiết kế tinh xảo, mang ý nghĩa phong thủy và vẻ đẹp trường tồn.</p>
-                        <button class="btn-view-category" onclick="window.location.href='san-pham.html?category=daychuyen'">
-                            <i class="fas fa-eye"></i> Xem sản phẩm
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Vòng tay -->
-                <div class="category-card" data-category="vongtay">
-                    <div class="category-img-container">
-                        <img src="images/vongtay1.jpg" alt="Vòng tay phỉ thúy" class="category-img"
-                             onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/00796B/FFFFFF?text=Vòng+Tay'">
-                    </div>
-                    <div class="category-info">
-                        <div class="category-icon">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <h3 class="category-name">Vòng Tay</h3>
-                        <p class="category-description">Vòng tay ngọc phỉ thúy cao cấp, chế tác thủ công từ đá tự nhiên, mang lại may mắn và tài lộc.</p>
-                        <button class="btn-view-category" onclick="window.location.href='san-pham.html?category=vongtay'">
-                            <i class="fas fa-eye"></i> Xem sản phẩm
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Nhẫn -->
-                <div class="category-card" data-category="nhan">
-                    <div class="category-img-container">
-                        <img src="images/nhan1.jpg" alt="Nhẫn phỉ thúy" class="category-img"
-                             onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/00796B/FFFFFF?text=Nhẫn'">
-                    </div>
-                    <div class="category-info">
-                        <div class="category-icon">
-                            <i class="far fa-gem"></i>
-                        </div>
-                        <h3 class="category-name">Nhẫn</h3>
-                        <p class="category-description">Nhẫn ngọc phỉ thúy kết hợp vàng 24K và kim cương, thiết kế độc bản dành cho người sành điệu.</p>
-                        <button class="btn-view-category" onclick="window.location.href='san-pham.html?category=nhan'">
-                            <i class="fas fa-eye"></i> Xem sản phẩm
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Bông tai -->
-                <div class="category-card" data-category="bongtai">
-                    <div class="category-img-container">
-                        <img src="images/bongtai1.jpg" alt="Bông tai phỉ thúy" class="category-img"
-                             onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/00796B/FFFFFF?text=Bông+Tai'">
-                    </div>
-                    <div class="category-info">
-                        <div class="category-icon">
-                            <i class="fas fa-ring"></i>
-                        </div>
-                        <h3 class="category-name">Bông Tai</h3>
-                        <p class="category-description">Bông tai ngọc phỉ thúy tinh xảo, kết hợp với kim cương và vàng, toát lên vẻ đẹp thanh tao quý phái.</p>
-                        <button class="btn-view-category" onclick="window.location.href='san-pham.html?category=bongtai'">
-                            <i class="fas fa-eye"></i> Xem sản phẩm
-                        </button>
-                    </div>
-                </div>
+            <div class="contact-form">
+                <h3><i class="fas fa-comment-dots"></i> Gửi yêu cầu tư vấn</h3>
+                <form id="contactForm">
+                    <input type="text" placeholder="Họ và tên" required>
+                    <input type="tel" placeholder="Số điện thoại" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Nội dung yêu cầu" rows="4"></textarea>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> GỬI YÊU CẦU
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- SẢN PHẨM NỔI BẬT -->
-    <section class="products-section">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-label">SẢN PHẨM ĐẶC SẮC</p>
-                <h2 class="section-title">Bộ Sưu Tập Nổi Bật</h2>
-                <div class="divider"></div>
-                <p class="section-subtitle">Những tác phẩm tinh túy được lựa chọn kỹ lưỡng từ bộ sưu tập của chúng tôi</p>
-            </div>
-            
-            <div class="products-grid" id="featuredProducts">
-                <!-- Sản phẩm sẽ được tải bằng JavaScript -->
-            </div>
-            
-            <div class="text-center">
-                <a href="san-pham.html" class="btn-primary">
-                    <i class="fas fa-gem"></i> XEM TẤT CẢ SẢN PHẨM
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- TÍNH NĂNG NỔI BẬT -->
-    <section class="features-section">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-box">
-                    <i class="fas fa-award feature-icon"></i>
-                    <h3 class="feature-title">100% Ngọc Tự Nhiên</h3>
-                    <p class="feature-desc">Kiểm định GIA Certified, nguồn gốc rõ ràng từ Myanmar</p>
-                </div>
-                <div class="feature-box">
-                    <i class="fas fa-handshake feature-icon"></i>
-                    <h3 class="feature-title">Bảo Hành 5 Năm</h3>
-                    <p class="feature-desc">Cam kết chất lượng lâu dài, đổi trả dễ dàng</p>
-                </div>
-                <div class="feature-box">
-                    <i class="fas fa-shipping-fast feature-icon"></i>
-                    <h3 class="feature-title">Giao Hàng Toàn Quốc</h3>
-                    <p class="feature-desc">Miễn phí vận chuyển đơn hàng trên 5 triệu</p>
-                </div>
-                <div class="feature-box">
-                    <i class="fas fa-gem feature-icon"></i>
-                    <h3 class="feature-title">Độc Bản Duy Nhất</h3>
-                    <p class="feature-desc">Mỗi sản phẩm là một tác phẩm nghệ thuật duy nhất</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
+    <!-- FOOTER (Chung) -->
     <footer class="footer-main">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h4 class="footer-title">
-                        <i class="fas fa-gem"></i> PHỈ THÚY CHI BẢO
-                    </h4>
-                    <p class="footer-text">
-                        Chuyên cung cấp ngọc phỉ thúy cao cấp, chế tác tinh xảo từ đá tự nhiên 100%.
-                    </p>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h4 class="footer-subtitle"><i class="fas fa-graduation-cap"></i> THÔNG TIN DỰ ÁN</h4>
-                    <div class="student-info">
-                        <div class="info-item">
-                            <span class="info-label">Họ tên:</span>
-                            <span class="info-value">Phạm Quốc Bảo</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">MSSV:</span>
-                            <span class="info-value">2274802010049</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Môn học:</span>
-                            <span class="info-value">Thiết kế Web</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Dự án:</span>
-                            <span class="info-value">Website ngọc phỉ thúy</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h4 class="footer-subtitle"><i class="fas fa-headset"></i> LIÊN HỆ</h4>
-                    <div class="contact-details">
-                        <p><i class="fas fa-phone"></i> <strong>Hotline:</strong> 0900 123 456</p>
-                        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> info@phithuybao.vn</p>
-                        <p><i class="fas fa-map-marker-alt"></i> <strong>Địa chỉ:</strong> TP. Hồ Chí Minh</p>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h4 class="footer-subtitle"><i class="fas fa-newspaper"></i> NHẬN THÔNG TIN</h4>
-                    <p class="footer-text">Đăng ký để nhận tin tức mới nhất</p>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" placeholder="Nhập email" required>
-                        <button type="submit" class="subscribe-btn">
-                            <i class="fas fa-paper-plane"></i> ĐĂNG KÝ
-                        </button>
-                    </form>
+        <div class="footer-content">
+            <!-- THƯƠNG HIỆU -->
+            <div class="footer-column">
+                <h4 class="footer-title">
+                    <i class="fas fa-gem"></i> PHỈ THÚY CHI BẢO
+                </h4>
+                <p class="footer-text">
+                    Chuyên cung cấp ngọc phỉ thúy cao cấp, chế tác tinh xảo từ đá tự nhiên 100%.
+                </p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <div class="footer-copyright">
-                    <p>© 2024 PHỈ THÚY CHI BẢO. Tất cả các quyền được bảo lưu.</p>
-                    <p class="student-note">
-                        <i class="fas fa-code"></i> Bài thực hành môn Thiết kế Web | Sinh viên: Phạm Quốc Bảo - MSSV: 2274802010049
-                    </p>
+            <!-- THÔNG TIN DỰ ÁN -->
+            <div class="footer-column">
+                <h4 class="footer-subtitle"><i class="fas fa-graduation-cap"></i> THÔNG TIN DỰ ÁN</h4>
+                <div class="student-info">
+                    <div class="info-item">
+                        <span class="info-label">Họ tên:</span>
+                        <span class="info-value">Phạm Quốc Bảo</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">MSSV:</span>
+                        <span class="info-value">2274802010049</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Môn học:</span>
+                        <span class="info-value">Thiết kế Web</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Dự án:</span>
+                        <span class="info-value">Website ngọc phỉ thúy</span>
+                    </div>
                 </div>
-                
-                <div class="footer-links">
-                    <a href="#">Chính sách bảo mật</a>
-                    <a href="#">Điều khoản sử dụng</a>
-                    <a href="#">Liên hệ quảng cáo</a>
+            </div>
+            
+            <!-- LIÊN HỆ -->
+            <div class="footer-column">
+                <h4 class="footer-subtitle"><i class="fas fa-headset"></i> LIÊN HỆ</h4>
+                <div class="contact-details">
+                    <p><i class="fas fa-phone"></i> <strong>Hotline:</strong> 0900 123 456</p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> info@phithuybao.vn</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Địa chỉ:</strong> TP. Hồ Chí Minh</p>
                 </div>
+            </div>
+            
+            <!-- NEWSLETTER -->
+            <div class="footer-column">
+                <h4 class="footer-subtitle"><i class="fas fa-newspaper"></i> NHẬN THÔNG TIN</h4>
+                <p class="footer-text">Đăng ký để nhận tin tức mới nhất</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Nhập email" required>
+                    <button type="submit" class="subscribe-btn">
+                        <i class="fas fa-paper-plane"></i> ĐĂNG KÝ
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>© 2024 PHỈ THÚY CHI BẢO. Tất cả các quyền được bảo lưu.</p>
+                <p class="student-note">
+                    <i class="fas fa-code"></i> Bài thực hành môn Thiết kế Web | Sinh viên: Phạm Quốc Bảo - MSSV: 2274802010049
+                </p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#">Chính sách bảo mật</a>
+                <a href="#">Điều khoản sử dụng</a>
+                <a href="#">Liên hệ quảng cáo</a>
             </div>
         </div>
         
@@ -272,83 +207,12 @@
         </button>
     </footer>
 
-    <!-- Thông tin sinh viên popup -->
-    <div id="studentPopup" class="student-popup">
-        <div class="popup-content">
-            <div class="popup-header">
-                <h3><i class="fas fa-user-graduate"></i> THÔNG TIN SINH VIÊN</h3>
-            </div>
-            <div class="popup-body">
-                <div class="student-info-popup">
-                    <p><strong>Họ tên:</strong> Phạm Quốc Bảo</p>
-                    <p><strong>MSSV:</strong> 2274802010049</p>
-                    <p><strong>Lớp:</strong> DHTMDTT/TT</p>
-                    <p><strong>Môn học:</strong> Thiết kế Web</p>
-                    <p><strong>Dự án:</strong> Website Ngọc Phỉ Thúy</p>
-                </div>
-            </div>
-            <div class="popup-footer">
-                <button class="popup-close-btn" id="popupCloseBtn">ĐÃ HIỂU</button>
-            </div>
-        </div>
-    </div>
-
     <!-- JavaScript -->
-    <script src="js/data.js"></script>
-    <script src="js/script.js"></script>
+    <script type="module" src="script.js"></script>
     <script>
+        // Cập nhật số lượng giỏ hàng
         document.addEventListener('DOMContentLoaded', function() {
-            // Khởi tạo particles
-            if (typeof particlesJS !== 'undefined') {
-                particlesJS("particles-js", {
-                    particles: {
-                        number: { value: 80, density: { enable: true, value_area: 800 } },
-                        color: { value: ["#d4af37", "#ffffff", "#80cbc4"] },
-                        opacity: { value: 0.7, random: true },
-                        size: { value: 3, random: true },
-                        line_linked: { enable: true, distance: 150, color: "#d4af37", opacity: 0.2, width: 1 },
-                        move: { enable: true, speed: 2, direction: "none" }
-                    }
-                });
-            }
-            
-            // Hiển thị sản phẩm nổi bật
-            loadFeaturedProducts();
-            
-            // Cập nhật số lượng giỏ hàng
             updateCartCount();
-            
-            // Hiển thị popup thông tin sinh viên
-            showStudentPopup();
-            
-            function loadFeaturedProducts() {
-                const container = document.getElementById('featuredProducts');
-                if (!container) return;
-                
-                let html = '';
-                // Lấy 4 sản phẩm đầu tiên
-                productsData.slice(0, 4).forEach(product => {
-                    html += `
-                        <div class="product-card" onclick="showProductModal(${product.id})">
-                            <div class="product-img-container">
-                                <img src="${product.image}" alt="${product.name}" class="product-img"
-                                     onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/00796B/FFFFFF?text=Phỉ+Thúy'">
-                                ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
-                            </div>
-                            <div class="product-info">
-                                <h3 class="product-name">${product.name}</h3>
-                                <p class="product-desc">${product.description.substring(0, 80)}...</p>
-                                <p class="product-price">${product.price}</p>
-                                <button class="product-link">
-                                    <i class="fas fa-gem"></i> XEM CHI TIẾT
-                                </button>
-                            </div>
-                        </div>
-                    `;
-                });
-                
-                container.innerHTML = html;
-            }
             
             function updateCartCount() {
                 const cartCount = document.querySelector('.cart-count');
@@ -356,19 +220,6 @@
                     const cart = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
                     cartCount.textContent = cart.length;
                 }
-            }
-            
-            function showStudentPopup() {
-                if (!localStorage.getItem('studentPopupShown')) {
-                    setTimeout(() => {
-                        document.getElementById('studentPopup').classList.add('active');
-                    }, 1000);
-                }
-                
-                document.getElementById('popupCloseBtn').addEventListener('click', function() {
-                    document.getElementById('studentPopup').classList.remove('active');
-                    localStorage.setItem('studentPopupShown', 'true');
-                });
             }
         });
     </script>

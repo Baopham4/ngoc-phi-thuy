@@ -31,7 +31,7 @@ const productsData = [
         name: "Ngọc Phỉ Thúy Tuyết",
         description: "Đá trắng trong suốt từ vùng Kachin, vân tuyết độc bản. Chế tác tinh xảo, mang vẻ đẹp thuần khiết.",
         price: "85.500.000 VNĐ",
-        image: "images/vongtay2.jpg",
+        image: "images/daychuyen1.jpg",
         badge: "CAO CẤP",
         category: "Dây chuyền",
         material: "Ngọc phỉ thúy tuyết trắng",
