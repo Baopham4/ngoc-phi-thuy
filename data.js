@@ -11,8 +11,8 @@ const studentInfo = {
     project: "Website Ngọc Phỉ Thúy"
 };
 
-// Dữ liệu sản phẩm
-const productsData = [
+// Dữ liệu sản phẩm (mặc định - sẽ bị ghi đè nếu có dữ liệu từ admin)
+let productsData = [
     {
         id: 1,
         name: "Vòng Phỉ Thúy Lý Ngư",
@@ -24,7 +24,10 @@ const productsData = [
         material: "Ngọc phỉ thúy tự nhiên",
         origin: "Myanmar",
         warranty: "5 năm",
-        certification: "GIA Certified"
+        certification: "GIA Certified",
+        salePrice: null,
+        stock: 15,
+        status: "active"
     },
     {
         id: 2,
@@ -37,7 +40,10 @@ const productsData = [
         material: "Ngọc phỉ thúy tuyết trắng",
         origin: "Kachin, Myanmar",
         warranty: "Trọn đời",
-        certification: "GIA Certified"
+        certification: "GIA Certified",
+        salePrice: null,
+        stock: 8,
+        status: "active"
     },
     {
         id: 3,
@@ -50,7 +56,10 @@ const productsData = [
         material: "Ngọc phỉ thúy + Vàng 24K",
         origin: "Myanmar",
         warranty: "5 năm",
-        certification: "GIA Certified"
+        certification: "GIA Certified",
+        salePrice: "58.750.000 VNĐ",
+        stock: 5,
+        status: "active"
     },
     {
         id: 4,
@@ -63,7 +72,10 @@ const productsData = [
         material: "Ngọc phỉ thúy + Kim cương",
         origin: "Myanmar",
         warranty: "3 năm",
-        certification: "GIA Certified"
+        certification: "GIA Certified",
+        salePrice: "34.500.000 VNĐ",
+        stock: 12,
+        status: "active"
     },
     {
         id: 5,
@@ -76,7 +88,10 @@ const productsData = [
         material: "Ngọc phỉ thúy tự nhiên",
         origin: "Myanmar",
         warranty: "5 năm",
-        certification: "GIA Certified"
+        certification: "GIA Certified",
+        salePrice: null,
+        stock: 7,
+        status: "active"
     },
     {
         id: 6,
@@ -89,7 +104,10 @@ const productsData = [
         material: "Ngọc phỉ thúy + Vàng 24K",
         origin: "Myanmar",
         warranty: "Trọn đời",
-        certification: "GIA Certified"
+        certification: "GIA Certified",
+        salePrice: "115.000.000 VNĐ",
+        stock: 3,
+        status: "active"
     },
     {
         id: 7,
@@ -102,7 +120,10 @@ const productsData = [
         material: "Ngọc phỉ thúy + Kim cương",
         origin: "Myanmar",
         warranty: "Trọn đời",
-        certification: "GIA Certified"
+        certification: "GIA Certified",
+        salePrice: null,
+        stock: 2,
+        status: "active"
     },
     {
         id: 8,
@@ -115,9 +136,71 @@ const productsData = [
         material: "Ngọc phỉ thúy tự nhiên",
         origin: "Myanmar",
         warranty: "3 năm",
-        certification: "GIA Certified"
+        certification: "GIA Certified",
+        salePrice: "25.300.000 VNĐ",
+        stock: 20,
+        status: "active"
     }
 ];
+
+// Hàm đồng bộ dữ liệu từ admin
+function syncProductsFromAdmin() {
+    try {
+        const adminProducts = localStorage.getItem('adminProducts');
+        if (adminProducts) {
+            const parsedProducts = JSON.parse(adminProducts);
+            
+            if (parsedProducts.length > 0) {
+                // Chuyển đổi định dạng từ admin sang website chính
+                productsData = parsedProducts.map(product => ({
+                    id: product.id,
+                    name: product.name,
+                    description: product.description || "",
+                    price: formatPrice(product.price) + " VNĐ",
+                    image: product.image || getDefaultImage(product.category),
+                    badge: product.salePrice ? "GIẢM GIÁ" : (product.badge || "MỚI"),
+                    category: product.category,
+                    material: product.details || "Ngọc phỉ thúy tự nhiên",
+                    origin: "Myanmar",
+                    warranty: product.category === "Vòng tay" ? "5 năm" : "3 năm",
+                    certification: "GIA Certified",
+                    salePrice: product.salePrice ? formatPrice(product.salePrice) + " VNĐ" : null,
+                    stock: product.stock || 0,
+                    status: product.status || "active"
+                }));
+                
+                console.log("✅ Đã đồng bộ sản phẩm từ admin:", productsData.length, "sản phẩm");
+                
+                // Kích hoạt sự kiện để các module biết dữ liệu đã thay đổi
+                if (typeof window !== 'undefined') {
+                    window.dispatchEvent(new CustomEvent('productsDataUpdated', {
+                        detail: { count: productsData.length }
+                    }));
+                }
+            }
+        }
+    } catch (error) {
+        console.error("❌ Lỗi khi đồng bộ dữ liệu từ admin:", error);
+    }
+}
+
+// Hàm định dạng giá
+function formatPrice(price) {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+// Hàm lấy ảnh mặc định theo danh mục
+function getDefaultImage(category) {
+    const categoryMap = {
+        "Vòng tay": "images/vongtay1.jpg",
+        "Dây chuyền": "images/daychuyen1.jpg",
+        "Nhẫn": "images/nhan1.jpg",
+        "Bông tai": "images/bongtai1.jpg",
+        "Mặt dây chuyền": "images/daychuyen1.jpg",
+        "Khác": "images/default-product.jpg"
+    };
+    return categoryMap[category] || "images/default-product.jpg";
+}
 
 // Dữ liệu tin tức
 const newsData = {
@@ -142,4 +225,4 @@ const newsData = {
 };
 
 // Xuất dữ liệu
-export { studentInfo, productsData, newsData };
+export { studentInfo, productsData, newsData, syncProductsFromAdmin };

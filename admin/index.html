@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Phỉ Thúy Chi Bảo</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h2>PHỈ THÚY <span>ADMIN</span></h2>
+                <p style="font-size: 0.8rem; margin-top: 5px; color: #ccc;">Quản lý hệ thống</p>
+            </div>
+            
+            <nav class="admin-nav">
+                <a href="index.html" class="nav-item active">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="products.html" class="nav-item">
+                    <i class="fas fa-gem"></i>
+                    <span class="nav-text">Sản Phẩm</span>
+                    <span class="badge" id="productCount">0</span>
+                </a>
+                <a href="orders.html" class="nav-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="nav-text">Đơn Hàng</span>
+                    <span class="badge">5</span>
+                </a>
+                <a href="customers.html" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span class="nav-text">Khách Hàng</span>
+                </a>
+                <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 20px;"></div>
+                <a href="../index.html" class="nav-item" target="_blank">
+                    <i class="fas fa-store"></i>
+                    <span class="nav-text">Về Website</span>
+                </a>
+                <a href="#" class="nav-item" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="nav-text">Đăng Xuất</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="admin-main">
+            <!-- HEADER -->
+            <header class="admin-header">
+                <h1><i class="fas fa-tachometer-alt"></i> Dashboard</h1>
+                <div class="user-info">
+                    <div class="user-avatar">A</div>
+                    <div>
+                        <strong>Admin</strong>
+                        <p>Quản trị viên</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- STATS CARDS -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon orders">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalOrders">0</h3>
+                        <p>Đơn hàng mới</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon products">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalProducts">0</h3>
+                        <p>Sản phẩm</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon customers">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalCustomers">0</h3>
+                        <p>Khách hàng</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon revenue">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalRevenue">0</h3>
+                        <p>Doanh thu</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RECENT ORDERS -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h2><i class="fas fa-history"></i> Đơn hàng gần đây</h2>
+                    <a href="orders.html" class="btn btn-secondary">Xem tất cả</a>
+                </div>
+                
+                <div class="table-responsive">
+                    <table id="recentOrders">
+                        <thead>
+                            <tr>
+                                <th>Mã ĐH</th>
+                                <th>Khách hàng</th>
+                                <th>Ngày đặt</th>
+                                <th>Tổng tiền</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dữ liệu sẽ được load bằng JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- PRODUCTS SUMMARY -->
+            <div class="table-container" style="margin-top: 30px;">
+                <div class="table-header">
+                    <h2><i class="fas fa-gem"></i> Sản phẩm bán chạy</h2>
+                    <a href="products.html" class="btn btn-secondary">Quản lý sản phẩm</a>
+                </div>
+                
+                <div class="table-responsive">
+                    <table id="topProducts">
+                        <thead>
+                            <tr>
+                                <th>Hình ảnh</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Danh mục</th>
+                                <th>Giá</th>
+                                <th>Đã bán</th>
+                                <th>Tồn kho</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dữ liệu sẽ được load bằng JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/admin.js"></script>
+    <script>
+        // Cập nhật số liệu dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load sản phẩm từ localStorage
+            const products = JSON.parse(localStorage.getItem('adminProducts')) || [];
+            
+            // Cập nhật số liệu
+            document.getElementById('totalProducts').textContent = products.length;
+            document.getElementById('productCount').textContent = products.length;
+            
+            // Tính tổng doanh thu (giả lập)
+            const totalRevenue = products.reduce((sum, product) => sum + (product.price * 10), 0);
+            document.getElementById('totalRevenue').textContent = 
+                (totalRevenue / 1000000).toFixed(1) + 'tr';
+            
+            // Logout button
+            document.getElementById('logoutBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                if (confirm('Bạn có chắc muốn đăng xuất?')) {
+                    window.location.href = '../index.html';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

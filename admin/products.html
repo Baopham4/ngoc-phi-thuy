@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Sản phẩm - Phỉ Thúy Chi Bảo</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h2>PHỈ THÚY <span>ADMIN</span></h2>
+                <p style="font-size: 0.8rem; margin-top: 5px; color: #ccc;">Quản lý hệ thống</p>
+            </div>
+            
+            <nav class="admin-nav">
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="products.html" class="nav-item active">
+                    <i class="fas fa-gem"></i>
+                    <span class="nav-text">Sản Phẩm</span>
+                    <span class="badge" id="productCountNav">0</span>
+                </a>
+                <a href="orders.html" class="nav-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="nav-text">Đơn Hàng</span>
+                </a>
+                <a href="customers.html" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span class="nav-text">Khách Hàng</span>
+                </a>
+                <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 20px;"></div>
+                <a href="../index.html" class="nav-item" target="_blank">
+                    <i class="fas fa-store"></i>
+                    <span class="nav-text">Về Website</span>
+                </a>
+                <a href="#" class="nav-item" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="nav-text">Đăng Xuất</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="admin-main">
+            <!-- HEADER -->
+            <header class="admin-header">
+                <h1><i class="fas fa-gem"></i> Quản lý Sản phẩm</h1>
+                <div class="user-info">
+                    <div class="user-avatar">A</div>
+                    <div>
+                        <strong>Admin</strong>
+                        <p>Quản trị viên</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- PRODUCTS TABLE -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h2>Danh sách sản phẩm <span id="productsCount" style="color: #666; font-size: 0.9em;">(0 sản phẩm)</span></h2>
+                    <div class="table-actions">
+                        <input type="text" id="searchProducts" class="form-control" placeholder="Tìm sản phẩm..." style="width: 200px;">
+                        <button class="btn btn-secondary" id="importDataBtn">
+                            <i class="fas fa-file-import"></i> Import
+                        </button>
+                        <button class="btn btn-secondary" id="exportDataBtn">
+                            <i class="fas fa-file-export"></i> Export
+                        </button>
+                        <button class="btn btn-primary" id="addProductBtn">
+                            <i class="fas fa-plus"></i> Thêm sản phẩm
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Hình ảnh</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Danh mục</th>
+                                <th>Giá</th>
+                                <th>Khuyến mãi</th>
+                                <th>Tồn kho</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsTableBody">
+                            <!-- Dữ liệu sẽ được load bằng JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- SYNC STATUS -->
+            <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #1ABC9C;">
+                <p style="margin: 0; color: #666;">
+                    <i class="fas fa-sync-alt" style="margin-right: 10px;"></i>
+                    Dữ liệu sản phẩm sẽ tự động đồng bộ với website chính. 
+                    <span id="lastSync" style="color: #999; font-size: 0.9em;">Chưa đồng bộ</span>
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <!-- MODAL THÊM/SỬA SẢN PHẨM -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Thêm sản phẩm mới</h3>
+                <button class="btn-icon" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="productForm">
+                    <input type="hidden" id="productId">
+                    
+                    <div class="form-group">
+                        <label class="form-label">Hình ảnh sản phẩm</label>
+                        <div class="image-upload" id="imageUpload">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Kéo thả hoặc click để chọn hình ảnh</p>
+                            <p style="font-size: 0.8em; color: #666; margin-top: 5px;">Hỗ trợ: JPG, PNG, GIF (tối đa 5MB)</p>
+                            <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                        </div>
+                        <img id="imagePreview" class="image-preview" alt="Preview">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Tên sản phẩm *</label>
+                        <input type="text" class="form-control" id="productName" required 
+                               placeholder="VD: Vòng tay Phỉ Thúy cao cấp">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Danh mục *</label>
+                        <select class="form-control" id="productCategory" required>
+                            <option value="">Chọn danh mục</option>
+                            <option value="Vòng tay">Vòng tay</option>
+                            <option value="Dây chuyền">Dây chuyền</option>
+                            <option value="Nhẫn">Nhẫn</option>
+                            <option value="Bông tai">Bông tai</option>
+                            <option value="Mặt dây chuyền">Mặt dây chuyền</option>
+                            <option value="Khác">Khác</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Mô tả sản phẩm</label>
+                        <textarea class="form-control" id="productDescription" rows="3"
+                                  placeholder="Mô tả chi tiết về sản phẩm..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Thông tin chi tiết</label>
+                        <textarea class="form-control" id="productDetails" rows="2" 
+                                  placeholder="Chất liệu, xuất xứ, kích thước, trọng lượng..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Giá gốc (VNĐ) *</label>
+                        <div class="price-input">
+                            <input type="number" class="form-control" id="productPrice" required min="0" 
+                                   placeholder="0">
+                            <div class="price-unit">VNĐ</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Giá khuyến mãi (VNĐ)</label>
+                        <div class="price-input">
+                            <input type="number" class="form-control" id="productSalePrice" min="0" 
+                                   placeholder="0 (nếu có)">
+                            <div class="price-unit">VNĐ</div>
+                        </div>
+                        <small style="color: #666; font-size: 0.8em;">Để trống nếu không có khuyến mãi</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Số lượng tồn kho *</label>
+                        <input type="number" class="form-control" id="productStock" required min="0" value="0">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Trạng thái</label>
+                        <select class="form-control" id="productStatus">
+                            <option value="active">Đang bán</option>
+                            <option value="inactive">Ngừng bán</option>
+                            <option value="outofstock">Hết hàng</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelBtn">Hủy</button>
+                <button type="button" class="btn btn-primary" id="saveProductBtn">Lưu sản phẩm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- IMPORT FILE INPUT -->
+    <input type="file" id="importFile" accept=".json" style="display: none;">
+
+    <script src="js/admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cập nhật số lượng sản phẩm
+            const products = JSON.parse(localStorage.getItem('adminProducts')) || [];
+            document.getElementById('productsCount').textContent = `(${products.length} sản phẩm)`;
+            document.getElementById('productCountNav').textContent = products.length;
+            
+            // Cập nhật thời gian đồng bộ
+            const lastSync = localStorage.getItem('lastSync');
+            if (lastSync) {
+                const timeDiff = Date.now() - parseInt(lastSync);
+                const minutes = Math.floor(timeDiff / (1000 * 60));
+                document.getElementById('lastSync').textContent = `Đồng bộ lần cuối: ${minutes} phút trước`;
+            }
+            
+            // Tìm kiếm sản phẩm
+            const searchInput = document.getElementById('searchProducts');
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    const rows = document.querySelectorAll('#productsTableBody tr');
+                    
+                    rows.forEach(row => {
+                        const productName = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+                        const category = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
+                        
+                        if (productName.includes(searchTerm) || category.includes(searchTerm)) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            }
+            
+            // Logout button
+            document.getElementById('logoutBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                if (confirm('Bạn có chắc muốn đăng xuất?')) {
+                    window.location.href = '../index.html';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

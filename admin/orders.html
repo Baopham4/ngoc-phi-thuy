@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Đơn hàng - Phỉ Thúy Chi Bảo</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h2>PHỈ THÚY <span>ADMIN</span></h2>
+                <p style="font-size: 0.8rem; margin-top: 5px; color: #ccc;">Quản lý hệ thống</p>
+            </div>
+            <nav class="admin-nav">
+                <a href="index.html" class="nav-item"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+                <a href="products.html" class="nav-item"><i class="fas fa-gem"></i><span>Sản Phẩm</span></a>
+                <a href="orders.html" class="nav-item active"><i class="fas fa-shopping-cart"></i><span>Đơn Hàng</span></a>
+                <a href="customers.html" class="nav-item"><i class="fas fa-users"></i><span>Khách Hàng</span></a>
+                <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 20px;"></div>
+                <a href="../index.html" class="nav-item" target="_blank"><i class="fas fa-store"></i><span>Về Website</span></a>
+                <a href="#" class="nav-item" id="logoutBtn"><i class="fas fa-sign-out-alt"></i><span>Đăng Xuất</span></a>
+            </nav>
+        </aside>
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1><i class="fas fa-shopping-cart"></i> Quản lý Đơn hàng</h1>
+                <div class="user-info">
+                    <div class="user-avatar">A</div>
+                    <div>
+                        <strong>Admin</strong>
+                        <p>Quản trị viên</p>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- FILTERS -->
+            <div class="table-container" style="margin-bottom: 20px;">
+                <div class="table-header">
+                    <h2>Bộ lọc đơn hàng</h2>
+                </div>
+                <div style="padding: 20px;">
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <div>
+                            <label class="form-label">Trạng thái</label>
+                            <select class="form-control" style="width: 200px;">
+                                <option value="">Tất cả</option>
+                                <option value="pending">Chờ xử lý</option>
+                                <option value="completed">Hoàn thành</option>
+                                <option value="cancelled">Đã hủy</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label">Từ ngày</label>
+                            <input type="date" class="form-control" style="width: 200px;">
+                        </div>
+                        <div>
+                            <label class="form-label">Đến ngày</label>
+                            <input type="date" class="form-control" style="width: 200px;">
+                        </div>
+                        <div style="align-self: flex-end;">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-filter"></i> Lọc
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ORDERS TABLE -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h2>Danh sách đơn hàng <span style="color: #666; font-size: 0.9em;">(24 đơn hàng)</span></h2>
+                    <div class="table-actions">
+                        <button class="btn btn-secondary"><i class="fas fa-download"></i> Export Excel</button>
+                        <button class="btn btn-primary"><i class="fas fa-print"></i> In danh sách</button>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table id="ordersTable">
+                        <thead>
+                            <tr>
+                                <th>Mã ĐH</th>
+                                <th>Khách hàng</th>
+                                <th>Sản phẩm</th>
+                                <th>Tổng tiền</th>
+                                <th>Ngày đặt</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dữ liệu sẽ được load bằng JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- ORDER STATS -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+                <div style="background: white; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <div style="font-size: 1.5rem; color: #1ABC9C; font-weight: bold;">8</div>
+                    <div style="color: #666; font-size: 0.9rem;">Đơn chờ xử lý</div>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <div style="font-size: 1.5rem; color: #27AE60; font-weight: bold;">14</div>
+                    <div style="color: #666; font-size: 0.9rem;">Đơn hoàn thành</div>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <div style="font-size: 1.5rem; color: #E74C3C; font-weight: bold;">2</div>
+                    <div style="color: #666; font-size: 0.9rem;">Đơn đã hủy</div>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <div style="font-size: 1.5rem; color: #F39C12; font-weight: bold;">128.5tr</div>
+                    <div style="color: #666; font-size: 0.9rem;">Tổng doanh thu</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Logout button
+            document.getElementById('logoutBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                if (confirm('Bạn có chắc muốn đăng xuất?')) {
+                    window.location.href = '../index.html';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

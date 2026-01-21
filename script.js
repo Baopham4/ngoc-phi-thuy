@@ -1406,3 +1406,65 @@ window.HomePage = HomePage;
 window.NewsPage = NewsPage;
 window.ProductsPage = ProductsPage;
 window.CartPage = CartPage;
+// ============================ //
+// KẾT NỐI VỚI ADMIN
+// ============================ //
+
+// Import module kết nối
+import './connect.js';
+
+// Lắng nghe sự kiện đồng bộ từ admin
+window.addEventListener('productsSynced', function(e) {
+    console.log('📦 Nhận sự kiện đồng bộ:', e.detail.count, 'sản phẩm');
+    
+    // Reload các component hiển thị sản phẩm
+    if (typeof ProductsPage !== 'undefined' && ProductsPage.loadProducts) {
+        ProductsPage.loadProducts();
+    }
+    
+    if (typeof HomePage !== 'undefined' && HomePage.loadFeaturedProducts) {
+        HomePage.loadFeaturedProducts();
+    }
+    
+    // Hiển thị thông báo
+    if (typeof Core !== 'undefined' && Core.showNotification) {
+        Core.showNotification(`Đã cập nhật ${e.detail.count} sản phẩm mới từ admin`, 'success');
+    }
+});
+
+// Tạo nút admin trên header (chỉ hiển thị cho admin)
+function addAdminButton() {
+    const header = document.querySelector('header');
+    if (!header) return;
+    
+    // Kiểm tra xem có dữ liệu admin không
+    const hasAdminData = localStorage.getItem('adminProducts') !== null;
+    
+    if (hasAdminData) {
+        const adminBtn = document.createElement('a');
+        adminBtn.href = 'admin/';
+        adminBtn.className = 'admin-access-btn';
+        adminBtn.innerHTML = '<i class="fas fa-cog"></i> Admin';
+        adminBtn.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2C3E50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            z-index: 999;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        `;
+        
+        document.body.appendChild(adminBtn);
+    }
+}
+
+// Thêm nút admin khi load
+document.addEventListener('DOMContentLoaded', addAdminButton);
