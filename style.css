@@ -825,6 +825,7 @@ img {
     border-radius: 3px;
     outline: none;
     -webkit-appearance: none;
+    appearance: none;
 }
 
 .range-slider::-webkit-slider-thumb {
