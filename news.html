@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ngọc Bảo - Tin Tức Phong Thủy & Văn Hóa</title>
+    <title>Tin Tức - Phỉ Thúy Chi Bảo</title>
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -11,247 +11,260 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <!-- CSS Chung -->
-    <link rel="stylesheet" href="style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- HEADER (Chung) -->
+    <!-- HEADER -->
     <header class="header-main">
         <div class="logo">
-            <i class="fas fa-newspaper"></i> NGỌC BẢO
+            <i class="fas fa-newspaper"></i> PHỈ THÚY CHI BẢO
         </div>
         <nav class="nav-menu">
             <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Trang chủ</a>
-            <a href="products.html" class="nav-link"><i class="fas fa-gem"></i> Sản phẩm</a>
-            <a href="news.html" class="nav-link active"><i class="fas fa-newspaper"></i> Tin tức</a>
+            <a href="san-pham.html" class="nav-link"><i class="fas fa-gem"></i> Sản phẩm</a>
+            <a href="tin-tuc.html" class="nav-link active"><i class="fas fa-newspaper"></i> Tin tức</a>
             <a href="gio-hang.html" class="nav-link cart-link">
                 <i class="fas fa-shopping-cart"></i> Giỏ hàng <span class="cart-count">0</span>
             </a>
+            <a href="lien-he.html" class="nav-link"><i class="fas fa-phone"></i> Liên hệ</a>
         </nav>
         <button class="mobile-menu-btn" id="mobileMenuBtn">
             <i class="fas fa-bars"></i>
         </button>
     </header>
 
-    <!-- BREAKING NEWS (Trang tin tức) -->
+    <!-- BREAKING NEWS -->
     <div class="breaking-news">
-        <div class="breaking-content">
-            <span class="breaking-label">
-                <i class="fas fa-bolt"></i> TIN NÓNG
-            </span>
-            <div class="breaking-text" id="breakingText">
-                <!-- Tin nóng được tải bằng JavaScript -->
+        <div class="container">
+            <div class="breaking-content">
+                <span class="breaking-label">
+                    <i class="fas fa-bolt"></i> TIN NÓNG
+                </span>
+                <div class="breaking-text" id="breakingText">
+                    <!-- Tin nóng được tải bằng JavaScript -->
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- HERO NEWS (Trang tin tức) -->
-    <section class="hero-news" id="heroNews">
-        <!-- Hero news được tải bằng JavaScript -->
+    <!-- HERO NEWS -->
+    <section class="hero-news">
+        <div class="container">
+            <div class="hero-news-content" id="heroNewsContent">
+                <!-- Hero news được tải bằng JavaScript -->
+            </div>
+        </div>
     </section>
 
-    <!-- MAIN CONTENT (Trang tin tức) -->
+    <!-- MAIN CONTENT -->
     <div class="news-container">
-        <!-- MAIN CONTENT -->
-        <main class="main-content">
-            <!-- TIN MỚI NHẤT -->
-            <div class="news-section-header">
-                <h2 class="news-section-title">Tin tức mới nhất</h2>
-                <a href="#" class="news-section-link">
-                    Xem tất cả <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-
-            <div class="news-grid" id="latestNews">
-                <!-- Tin tức được tải bằng JavaScript -->
-            </div>
-
-            <!-- BÀI VIẾT NỔI BẬT -->
-            <div class="featured-news">
-                <h2 class="featured-title">Bài viết nổi bật</h2>
-                <div class="news-card" id="featuredArticle">
-                    <!-- Nội dung bài viết nổi bật -->
-                </div>
-            </div>
-
-            <!-- KHÁM PHÁ VĂN HÓA -->
-            <div class="news-section-header">
-                <h2 class="news-section-title">Khám phá văn hóa</h2>
-                <a href="#" class="news-section-link">
-                    Xem thêm <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-
-            <div class="news-grid" id="cultureNews">
-                <!-- Tin văn hóa -->
-            </div>
-
-            <!-- PAGINATION -->
-            <div class="pagination">
-                <a href="#" class="page-link"><i class="fas fa-chevron-left"></i></a>
-                <a href="#" class="page-link active">1</a>
-                <a href="#" class="page-link">2</a>
-                <a href="#" class="page-link">3</a>
-                <a href="#" class="page-link">4</a>
-                <a href="#" class="page-link"><i class="fas fa-chevron-right"></i></a>
-            </div>
-        </main>
-
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-            <!-- TIN ĐANG HOT -->
-            <div class="sidebar-widget">
-                <h3 class="widget-title">
-                    <i class="fas fa-fire"></i> Tin đang hot
-                </h3>
-                <div class="trending-list" id="trendingNews">
-                    <!-- Trending news được tải bằng JavaScript -->
-                </div>
-            </div>
-
-            <!-- DANH MỤC -->
-            <div class="sidebar-widget">
-                <h3 class="widget-title">
-                    <i class="fas fa-folder"></i> Danh mục
-                </h3>
-                <div class="category-list" id="categoryList">
-                    <!-- Categories được tải bằng JavaScript -->
-                </div>
-            </div>
-
-            <!-- THẺ PHỔ BIẾN -->
-            <div class="sidebar-widget">
-                <h3 class="widget-title">
-                    <i class="fas fa-tags"></i> Thẻ phổ biến
-                </h3>
-                <div class="tags-cloud" id="tagsCloud">
-                    <!-- Tags được tải bằng JavaScript -->
-                </div>
-            </div>
-
-            <!-- NHẬN BẢN TIN -->
-            <div class="sidebar-widget">
-                <h3 class="widget-title">
-                    <i class="fas fa-envelope"></i> Nhận bản tin
-                </h3>
-                <p class="widget-text">Đăng ký để nhận tin tức mới nhất về phong thủy và ngọc quý</p>
-                <form class="newsletter-form" id="newsletterFormSidebar">
-                    <input type="email" placeholder="Email của bạn" required>
-                    <button type="submit" class="newsletter-btn">
-                        <i class="fas fa-paper-plane"></i> Đăng ký
-                    </button>
-                </form>
-            </div>
-
-            <!-- THÔNG TIN SINH VIÊN -->
-            <div class="sidebar-widget student-info-widget">
-                <h3 class="widget-title">
-                    <i class="fas fa-user-graduate"></i> Thông tin sinh viên
-                </h3>
-                <div class="student-info">
-                    <div class="info-item">
-                        <span class="info-label">Họ tên:</span>
-                        <span class="info-value">Phạm Quốc Bảo</span>
+        <div class="container">
+            <div class="news-layout">
+                <!-- MAIN CONTENT -->
+                <main class="news-main">
+                    <!-- TIN MỚI NHẤT -->
+                    <div class="news-section-header">
+                        <h2 class="news-section-title">Tin tức mới nhất</h2>
+                        <a href="#" class="news-section-link">
+                            Xem tất cả <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
-                    <div class="info-item">
-                        <span class="info-label">MSSV:</span>
-                        <span class="info-value">2274802010049</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Môn học:</span>
-                        <span class="info-value">Thiết kế Web</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Lớp:</span>
-                        <span class="info-value">DHTMDTT/TT</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Dự án:</span>
-                        <span class="info-value">Website tin tức</span>
-                    </div>
-                </div>
-            </div>
-        </aside>
-    </div>
 
-    <!-- FOOTER (Chung) -->
-    <footer class="footer-main">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4 class="footer-title">
-                    <i class="fas fa-newspaper"></i> NGỌC BẢO
-                </h4>
-                <p class="footer-text">
-                    Cổng thông tin hàng đầu về phong thủy, văn hóa phương Đông và ngọc quý.
-                </p>
-                <div class="social-icons">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-            
-            <div class="footer-column">
-                <h4 class="footer-subtitle"><i class="fas fa-link"></i> Liên kết nhanh</h4>
-                <div class="footer-links-list">
-                    <a href="#"><i class="fas fa-chevron-right"></i> Tin tức mới nhất</a>
-                    <a href="#"><i class="fas fa-chevron-right"></i> Phong thủy</a>
-                    <a href="#"><i class="fas fa-chevron-right"></i> Văn hóa phương Đông</a>
-                    <a href="#"><i class="fas fa-chevron-right"></i> Thị trường ngọc quý</a>
-                </div>
-            </div>
-            
-            <div class="footer-column">
-                <h4 class="footer-subtitle"><i class="fas fa-headset"></i> Liên hệ</h4>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <strong>Địa chỉ:</strong>
-                            <p>123 Nguyễn Văn Linh, Quận 7, TP.HCM</p>
+                    <div class="news-grid" id="latestNews">
+                        <!-- Tin tức được tải bằng JavaScript -->
+                    </div>
+
+                    <!-- BÀI VIẾT NỔI BẬT -->
+                    <div class="featured-news">
+                        <h2 class="featured-title">Bài viết nổi bật</h2>
+                        <div class="news-card featured" id="featuredArticle">
+                            <!-- Nội dung bài viết nổi bật -->
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <strong>Hotline:</strong>
-                            <p>1900 1234</p>
+
+                    <!-- KHÁM PHÁ VĂN HÓA -->
+                    <div class="news-section-header">
+                        <h2 class="news-section-title">Khám phá văn hóa</h2>
+                        <a href="#" class="news-section-link">
+                            Xem thêm <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="news-grid" id="cultureNews">
+                        <!-- Tin văn hóa -->
+                    </div>
+
+                    <!-- PAGINATION -->
+                    <div class="pagination">
+                        <a href="#" class="page-link"><i class="fas fa-chevron-left"></i></a>
+                        <a href="#" class="page-link active">1</a>
+                        <a href="#" class="page-link">2</a>
+                        <a href="#" class="page-link">3</a>
+                        <a href="#" class="page-link">4</a>
+                        <a href="#" class="page-link"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </main>
+
+                <!-- SIDEBAR -->
+                <aside class="news-sidebar">
+                    <!-- TIN ĐANG HOT -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">
+                            <i class="fas fa-fire"></i> Tin đang hot
+                        </h3>
+                        <div class="trending-list" id="trendingNews">
+                            <!-- Trending news được tải bằng JavaScript -->
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <strong>Email:</strong>
-                            <p>info@ngocbao.vn</p>
+
+                    <!-- DANH MỤC -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">
+                            <i class="fas fa-folder"></i> Danh mục
+                        </h3>
+                        <div class="category-list" id="categoryList">
+                            <!-- Categories được tải bằng JavaScript -->
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="footer-column">
-                <h4 class="footer-subtitle"><i class="fas fa-qrcode"></i> QR Code</h4>
-                <div class="qr-code">
-                    <div class="qr-placeholder">
-                        <i class="fas fa-qrcode"></i>
-                        <p>Quét QR Code để truy cập mobile</p>
+
+                    <!-- THẺ PHỔ BIẾN -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">
+                            <i class="fas fa-tags"></i> Thẻ phổ biến
+                        </h3>
+                        <div class="tags-cloud" id="tagsCloud">
+                            <!-- Tags được tải bằng JavaScript -->
+                        </div>
                     </div>
-                </div>
+
+                    <!-- NHẬN BẢN TIN -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">
+                            <i class="fas fa-envelope"></i> Nhận bản tin
+                        </h3>
+                        <p class="widget-text">Đăng ký để nhận tin tức mới nhất về phong thủy và ngọc quý</p>
+                        <form class="newsletter-form" id="newsletterFormSidebar">
+                            <input type="email" placeholder="Email của bạn" required>
+                            <button type="submit" class="newsletter-btn">
+                                <i class="fas fa-paper-plane"></i> Đăng ký
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- THÔNG TIN SINH VIÊN -->
+                    <div class="sidebar-widget student-info-widget">
+                        <h3 class="widget-title">
+                            <i class="fas fa-user-graduate"></i> Thông tin sinh viên
+                        </h3>
+                        <div class="student-info">
+                            <div class="info-item">
+                                <span class="info-label">Họ tên:</span>
+                                <span class="info-value">Phạm Quốc Bảo</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">MSSV:</span>
+                                <span class="info-value">2274802010049</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Môn học:</span>
+                                <span class="info-value">Thiết kế Web</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Lớp:</span>
+                                <span class="info-value">DHTMDTT/TT</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Dự án:</span>
+                                <span class="info-value">Website tin tức</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
             </div>
         </div>
-        
-        <div class="footer-bottom">
-            <div class="footer-copyright">
-                <p>© 2024 - <span id="currentYear">2024</span> NGỌC BÁO. Tất cả các quyền được bảo lưu.</p>
-                <p class="student-note">
-                    <i class="fas fa-code"></i> Bài thực hành môn Thiết kế Web | Sinh viên: Phạm Quốc Bảo - MSSV: 2274802010049
-                </p>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4 class="footer-title">
+                        <i class="fas fa-newspaper"></i> PHỈ THÚY CHI BẢO
+                    </h4>
+                    <p class="footer-text">
+                        Cổng thông tin hàng đầu về phong thủy, văn hóa phương Đông và ngọc quý.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-subtitle"><i class="fas fa-link"></i> Liên kết nhanh</h4>
+                    <div class="footer-links-list">
+                        <a href="#"><i class="fas fa-chevron-right"></i> Tin tức mới nhất</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> Phong thủy</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> Văn hóa phương Đông</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> Thị trường ngọc quý</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-subtitle"><i class="fas fa-headset"></i> Liên hệ</h4>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Địa chỉ:</strong>
+                                <p>123 Nguyễn Văn Linh, Quận 7, TP.HCM</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Hotline:</strong>
+                                <p>1900 1234</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email:</strong>
+                                <p>info@phithuybao.vn</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-subtitle"><i class="fas fa-qrcode"></i> QR Code</h4>
+                    <div class="qr-code">
+                        <div class="qr-placeholder">
+                            <i class="fas fa-qrcode"></i>
+                            <p>Quét QR Code để truy cập mobile</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             
-            <div class="footer-links">
-                <a href="#">Chính sách bảo mật</a>
-                <a href="#">Điều khoản sử dụng</a>
-                <a href="#">Liên hệ quảng cáo</a>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>© 2024 - <span id="currentYear">2024</span> PHỈ THÚY CHI BẢO. Tất cả các quyền được bảo lưu.</p>
+                    <p class="student-note">
+                        <i class="fas fa-code"></i> Bài thực hành môn Thiết kế Web | Sinh viên: Phạm Quốc Bảo - MSSV: 2274802010049
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#">Chính sách bảo mật</a>
+                    <a href="#">Điều khoản sử dụng</a>
+                    <a href="#">Liên hệ quảng cáo</a>
+                </div>
             </div>
         </div>
         
@@ -261,11 +274,18 @@
     </footer>
 
     <!-- JavaScript -->
-    <script type="module" src="script.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
     <script>
-        // Cập nhật số lượng giỏ hàng
         document.addEventListener('DOMContentLoaded', function() {
+            // Cập nhật số lượng giỏ hàng
             updateCartCount();
+            
+            // Cập nhật năm hiện tại
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Tải tin tức
+            loadNewsData();
             
             function updateCartCount() {
                 const cartCount = document.querySelector('.cart-count');
@@ -275,9 +295,583 @@
                 }
             }
             
-            // Cập nhật năm hiện tại
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            function loadNewsData() {
+                // Load breaking news
+                loadBreakingNews();
+                
+                // Load hero news
+                loadHeroNews();
+                
+                // Load latest news
+                loadLatestNews();
+                
+                // Load trending news
+                loadTrendingNews();
+                
+                // Load categories
+                loadCategories();
+                
+                // Load tags
+                loadTags();
+                
+                // Load culture news
+                loadCultureNews();
+                
+                // Load featured article
+                loadFeaturedArticle();
+            }
+            
+            function loadBreakingNews() {
+                const breakingText = document.getElementById('breakingText');
+                if (!breakingText) return;
+                
+                const breakingNews = [
+                    "• Giá ngọc phỉ thúy thượng hạng tăng 15% trong quý đầu năm 2024",
+                    "• Triển lãm ngọc quý quốc tế sẽ diễn ra tại Hà Nội tháng 10/2024",
+                    "• Phát hiện mỏ ngọc bích mới tại Myanmar với trữ lượng lớn",
+                    "• Chuyên gia phong thủy cảnh báo về ngọc giả trên thị trường"
+                ];
+                
+                let newsHTML = '<span class="marquee">';
+                breakingNews.forEach((news, index) => {
+                    newsHTML += news + (index < breakingNews.length - 1 ? ' &nbsp;&nbsp;•&nbsp;&nbsp; ' : '');
+                });
+                newsHTML += '</span>';
+                
+                breakingText.innerHTML = newsHTML;
+            }
+            
+            function loadHeroNews() {
+                const heroNews = document.getElementById('heroNewsContent');
+                if (!heroNews) return;
+                
+                const hero = {
+                    title: "Bí mật phong thủy của ngọc phỉ thúy: Không chỉ là trang sức",
+                    excerpt: "Khám phá những bí ẩn phong thủy đằng sau viên ngọc quý được săn lùng nhất châu Á.",
+                    author: "Nguyễn Phong Thủy",
+                    date: "15/04/2024",
+                    readTime: "8 phút",
+                    views: "25.4K",
+                    category: "PHONG THỦY"
+                };
+                
+                heroNews.innerHTML = `
+                    <span class="news-category category-phongthuy">
+                        <i class="fas fa-yin-yang"></i> ${hero.category}
+                    </span>
+                    <h1 class="hero-news-title">${hero.title}</h1>
+                    <p class="hero-news-excerpt">${hero.excerpt}</p>
+                    <div class="news-meta">
+                        <span><i class="fas fa-user"></i> ${hero.author}</span>
+                        <span><i class="fas fa-calendar"></i> ${hero.date}</span>
+                        <span><i class="fas fa-clock"></i> Đọc ${hero.readTime}</span>
+                        <span><i class="fas fa-eye"></i> ${hero.views} lượt xem</span>
+                    </div>
+                    <button class="read-hero-btn" onclick="openArticleModal('hero')">
+                        <i class="fas fa-book-open"></i> Đọc bài viết
+                    </button>
+                `;
+            }
+            
+            function loadLatestNews() {
+                const latestNews = document.getElementById('latestNews');
+                if (!latestNews) return;
+                
+                const newsItems = [
+                    {
+                        id: 1,
+                        title: "Cách phân biệt ngọc phỉ thúy thật và giả trong 5 phút",
+                        excerpt: "Hướng dẫn chi tiết từ chuyên gia giúp bạn nhận biết ngọc phỉ thúy thật chỉ trong vài phút.",
+                        category: "NGỌC QUÝ",
+                        date: "14/04/2024",
+                        views: "18.2K",
+                        image: "images/tintuc1.png"
+                    },
+                    {
+                        id: 2,
+                        title: "Vị trí đặt tượng phong thủy trong nhà mang lại tài lộc",
+                        excerpt: "Bí quyết bài trí tượng phong thủy đúng vị trí để thu hút năng lượng tích cực.",
+                        category: "PHONG THỦY",
+                        date: "13/04/2024",
+                        views: "22.5K",
+                        image: "images/tintuc2.jpg"
+                    },
+                    {
+                        id: 3,
+                        title: "Lịch sử 3000 năm của ngọc bích trong văn hóa phương Đông",
+                        excerpt: "Hành trình xuyên suốt lịch sử của ngọc bích từ biểu tượng quyền lực đến vật phẩm phong thủy.",
+                        category: "VĂN HÓA",
+                        date: "12/04/2024",
+                        views: "15.8K",
+                        image: "images/tintuc3.jpg"
+                    }
+                ];
+                
+                let newsHTML = '';
+                newsItems.forEach(news => {
+                    const categoryClass = getCategoryClass(news.category);
+                    const categoryIcon = getCategoryIcon(news.category);
+                    
+                    newsHTML += `
+                        <div class="news-card" onclick="openArticleModal(${news.id})">
+                            <img src="${news.image}" alt="${news.title}" class="news-image"
+                                 onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/00796B/FFFFFF?text=Tin+tức'">
+                            <div class="news-content">
+                                <span class="news-category-badge ${categoryClass}">
+                                    <i class="${categoryIcon}"></i> ${news.category}
+                                </span>
+                                <h3 class="news-title">${news.title}</h3>
+                                <p class="news-excerpt">${news.excerpt}</p>
+                                <div class="news-footer">
+                                    <span class="news-date"><i class="far fa-calendar"></i> ${news.date}</span>
+                                    <span class="news-views"><i class="fas fa-eye"></i> ${news.views} lượt xem</span>
+                                    <span class="read-more">
+                                        Đọc tiếp <i class="fas fa-arrow-right"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                latestNews.innerHTML = newsHTML;
+            }
+            
+            function loadTrendingNews() {
+                const trendingNews = document.getElementById('trendingNews');
+                if (!trendingNews) return;
+                
+                const trendingItems = [
+                    {
+                        id: 10,
+                        title: "Ngọc phỉ thúy 'Vua' được bán với giá kỷ lục 2 triệu USD",
+                        views: "45.2K"
+                    },
+                    {
+                        id: 11,
+                        title: "10 sai lầm phong thủy phổ biến trong thiết kế nhà ở",
+                        views: "38.7K"
+                    },
+                    {
+                        id: 12,
+                        title: "Bí ẩn những viên ngọc bích trong lăng mộ vua chúa",
+                        views: "32.1K"
+                    }
+                ];
+                
+                let trendingHTML = '';
+                trendingItems.forEach((news, index) => {
+                    trendingHTML += `
+                        <div class="trending-item" onclick="openArticleModal(${news.id})">
+                            <div class="trending-number">${index + 1}</div>
+                            <div class="trending-content">
+                                <div class="trending-title">${news.title}</div>
+                                <div class="trending-meta">
+                                    <span><i class="fas fa-eye"></i> ${news.views} lượt xem</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                trendingNews.innerHTML = trendingHTML;
+            }
+            
+            function loadCategories() {
+                const categoryList = document.getElementById('categoryList');
+                if (!categoryList) return;
+                
+                const categories = [
+                    { name: "Phong thủy", count: 128, icon: "fas fa-yin-yang" },
+                    { name: "Ngọc quý", count: 95, icon: "fas fa-gem" },
+                    { name: "Văn hóa", count: 76, icon: "fas fa-landmark" },
+                    { name: "Thị trường", count: 54, icon: "fas fa-chart-line" }
+                ];
+                
+                let categoryHTML = '';
+                categories.forEach(category => {
+                    categoryHTML += `
+                        <a href="#" class="category-item" onclick="filterByCategory('${category.name}')">
+                            <span class="category-name">
+                                <i class="${category.icon}"></i> ${category.name}
+                            </span>
+                            <span class="category-count">${category.count}</span>
+                        </a>
+                    `;
+                });
+                
+                categoryList.innerHTML = categoryHTML;
+            }
+            
+            function loadTags() {
+                const tagsCloud = document.getElementById('tagsCloud');
+                if (!tagsCloud) return;
+                
+                const tags = [
+                    "Ngọc phỉ thúy", "Phong thủy", "Văn hóa", "Đầu tư",
+                    "Tài lộc", "May mắn", "Trang sức", "Cổ vật"
+                ];
+                
+                let tagsHTML = '';
+                tags.forEach(tag => {
+                    tagsHTML += `
+                        <a href="#" class="tag" onclick="filterByTag('${tag}')">${tag}</a>
+                    `;
+                });
+                
+                tagsCloud.innerHTML = tagsHTML;
+            }
+            
+            function loadCultureNews() {
+                const cultureNews = document.getElementById('cultureNews');
+                if (!cultureNews) return;
+                
+                const newsItems = [
+                    {
+                        id: 4,
+                        title: "Biểu tượng ngọc bích trong văn hóa Trung Hoa",
+                        excerpt: "Tìm hiểu ý nghĩa sâu sắc của ngọc bích trong văn hóa và tín ngưỡng Trung Hoa cổ đại.",
+                        category: "VĂN HÓA",
+                        date: "10/04/2024",
+                        views: "12.3K",
+                        image: "https://via.placeholder.com/400x300/00796B/FFFFFF?text=Văn+Hóa"
+                    },
+                    {
+                        id: 5,
+                        title: "Nghệ thuật chế tác ngọc phỉ thúy truyền thống",
+                        excerpt: "Khám phá những kỹ thuật chế tác ngọc phỉ thúy được truyền lại qua nhiều thế hệ.",
+                        category: "NGHỆ THUẬT",
+                        date: "09/04/2024",
+                        views: "14.7K",
+                        image: "https://via.placeholder.com/400x300/00796B/FFFFFF?text=Nghệ+Thuật"
+                    }
+                ];
+                
+                let newsHTML = '';
+                newsItems.forEach(news => {
+                    const categoryClass = getCategoryClass(news.category);
+                    const categoryIcon = getCategoryIcon(news.category);
+                    
+                    newsHTML += `
+                        <div class="news-card" onclick="openArticleModal(${news.id})">
+                            <img src="${news.image}" alt="${news.title}" class="news-image">
+                            <div class="news-content">
+                                <span class="news-category-badge ${categoryClass}">
+                                    <i class="${categoryIcon}"></i> ${news.category}
+                                </span>
+                                <h3 class="news-title">${news.title}</h3>
+                                <p class="news-excerpt">${news.excerpt}</p>
+                                <div class="news-footer">
+                                    <span class="news-date"><i class="far fa-calendar"></i> ${news.date}</span>
+                                    <span class="news-views"><i class="fas fa-eye"></i> ${news.views} lượt xem</span>
+                                    <span class="read-more">
+                                        Đọc tiếp <i class="fas fa-arrow-right"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                cultureNews.innerHTML = newsHTML;
+            }
+            
+            function loadFeaturedArticle() {
+                const featuredArticle = document.getElementById('featuredArticle');
+                if (!featuredArticle) return;
+                
+                const article = {
+                    id: 6,
+                    title: "Bí quyết chọn ngọc phỉ thúy theo mệnh trong phong thủy",
+                    excerpt: "Hướng dẫn chi tiết cách chọn ngọc phỉ thúy phù hợp với bản mệnh để mang lại may mắn, tài lộc và sức khỏe.",
+                    category: "PHONG THỦY",
+                    date: "08/04/2024",
+                    views: "28.9K",
+                    image: "images/tintuchero.jpg",
+                    content: `
+                        <p>Ngọc phỉ thúy từ lâu đã được coi là biểu tượng của sự may mắn, tài lộc và sức khỏe trong văn hóa phương Đông. Tuy nhiên, để phát huy tối đa công dụng phong thủy, việc chọn ngọc phù hợp với bản mệnh là vô cùng quan trọng.</p>
+                        
+                        <h3>1. Người mệnh Kim</h3>
+                        <p>Nên chọn ngọc có màu trắng, xám, ghi hoặc vàng kim. Tránh màu đỏ, hồng, tím (màu của Hỏa khắc Kim).</p>
+                        
+                        <h3>2. Người mệnh Mộc</h3>
+                        <p>Phù hợp với ngọc màu xanh lá cây, xanh nước biển. Tránh màu trắng, vàng kim (màu của Kim khắc Mộc).</p>
+                        
+                        <h3>3. Người mệnh Thủy</h3>
+                        <p>Nên đeo ngọc màu đen, xanh nước biển, trắng. Tránh màu vàng, nâu đất (màu của Thổ khắc Thủy).</p>
+                        
+                        <h3>4. Người mệnh Hỏa</h3>
+                        <p>Phù hợp với ngọc màu đỏ, hồng, tím, xanh lá cây. Tránh màu đen, xanh nước biển (màu của Thủy khắc Hỏa).</p>
+                        
+                        <h3>5. Người mệnh Thổ</h3>
+                        <p>Nên chọn ngọc màu vàng, nâu, đỏ, hồng. Tránh màu xanh lá cây (màu của Mộc khắc Thổ).</p>
+                    `
+                };
+                
+                featuredArticle.innerHTML = `
+                    <img src="${article.image}" alt="${article.title}" class="news-image"
+                         onerror="this.onerror=null; this.src='https://via.placeholder.com/800x400/00796B/FFFFFF?text=Bài+Viết+Nổi+Bật'">
+                    <div class="news-content">
+                        <span class="news-category-badge category-phongthuy">
+                            <i class="fas fa-yin-yang"></i> ${article.category}
+                        </span>
+                        <h3 class="news-title">${article.title}</h3>
+                        <p class="news-excerpt">${article.excerpt}</p>
+                        <div class="news-footer">
+                            <span class="news-date"><i class="far fa-calendar"></i> ${article.date}</span>
+                            <span class="news-views"><i class="fas fa-eye"></i> ${article.views} lượt xem</span>
+                            <button class="read-hero-btn" onclick="openArticleModal(${article.id}, true)">
+                                <i class="fas fa-book-open"></i> Đọc bài viết
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            function getCategoryClass(category) {
+                const categories = {
+                    'PHONG THỦY': 'category-phongthuy',
+                    'NGỌC QUÝ': 'category-ngocquy',
+                    'VĂN HÓA': 'category-vanhoa',
+                    'NGHỆ THUẬT': 'category-nghethuat',
+                    'THỊ TRƯỜNG': 'category-thitruong'
+                };
+                return categories[category] || 'category-phongthuy';
+            }
+            
+            function getCategoryIcon(category) {
+                const icons = {
+                    'PHONG THỦY': 'fas fa-yin-yang',
+                    'NGỌC QUÝ': 'fas fa-gem',
+                    'VĂN HÓA': 'fas fa-landmark',
+                    'NGHỆ THUẬT': 'fas fa-palette',
+                    'THỊ TRƯỜNG': 'fas fa-chart-line'
+                };
+                return icons[category] || 'fas fa-newspaper';
+            }
         });
+        
+        // Global functions
+        function openArticleModal(articleId, isFeatured = false) {
+            let article;
+            
+            if (articleId === 'hero') {
+                article = {
+                    title: "Bí mật phong thủy của ngọc phỉ thúy: Không chỉ là trang sức",
+                    category: "PHONG THỦY",
+                    author: "Nguyễn Phong Thủy",
+                    date: "15/04/2024",
+                    readTime: "8 phút",
+                    views: "25.4K",
+                    image: "images/tintuchero.jpg",
+                    content: `
+                        <p>Ngọc phỉ thúy không chỉ là một loại trang sức quý giá mà còn mang trong mình những bí ẩn phong thủy sâu sắc. Từ hàng ngàn năm trước, ngọc phỉ thúy đã được các bậc đế vương, quý tộc sử dụng như một vật phẩm mang lại may mắn, sức khỏe và quyền lực.</p>
+                        
+                        <h3>Ý nghĩa phong thủy của ngọc phỉ thúy</h3>
+                        <p>Theo quan niệm phong thủy, ngọc phỉ thúy có khả năng:</p>
+                        <ul>
+                            <li>Hấp thụ năng lượng tiêu cực, bảo vệ chủ nhân</li>
+                            <li>Thu hút tài lộc, may mắn trong kinh doanh</li>
+                            <li>Cải thiện sức khỏe, kéo dài tuổi thọ</li>
+                            <li>Ổn định tinh thần, giảm căng thẳng</li>
+                            <li>Tăng cường các mối quan hệ xã hội</li>
+                        </ul>
+                        
+                        <h3>Chọn ngọc phỉ thúy theo mệnh</h3>
+                        <p>Màu sắc của ngọc phỉ thúy rất quan trọng trong phong thủy. Mỗi màu sắc phù hợp với một bản mệnh khác nhau:</p>
+                        <ul>
+                            <li><strong>Màu xanh lục:</strong> Phù hợp với mệnh Mộc và Hỏa</li>
+                            <li><strong>Màu trắng:</strong> Phù hợp với mệnh Kim và Thủy</li>
+                            <li><strong>Màu tím:</strong> Phù hợp với mệnh Hỏa</li>
+                            <li><strong>Màu vàng:</strong> Phù hợp với mệnh Thổ</li>
+                        </ul>
+                        
+                        <h3>Cách sử dụng ngọc phỉ thúy hiệu quả</h3>
+                        <p>Để phát huy tối đa công dụng phong thủy, cần lưu ý:</p>
+                        <ol>
+                            <li>Chọn ngọc phù hợp với bản mệnh</li>
+                            <li>Làm sạch và nạp năng lượng định kỳ</li>
+                            <li>Đeo thường xuyên để tạo sự kết nối</li>
+                            <li>Tránh để ngọc tiếp xúc với hóa chất</li>
+                            <li>Bảo quản nơi khô ráo, sạch sẽ</li>
+                        </ol>
+                    `
+                };
+            } else if (articleId === 6 || isFeatured) {
+                article = {
+                    title: "Bí quyết chọn ngọc phỉ thúy theo mệnh trong phong thủy",
+                    category: "PHONG THỦY",
+                    author: "Mai Thanh Tùng",
+                    date: "08/04/2024",
+                    readTime: "10 phút",
+                    views: "28.9K",
+                    image: "images/tintuchero.jpg",
+                    content: `
+                        <p>Ngọc phỉ thúy từ lâu đã được coi là biểu tượng của sự may mắn, tài lộc và sức khỏe trong văn hóa phương Đông. Tuy nhiên, để phát huy tối đa công dụng phong thủy, việc chọn ngọc phù hợp với bản mệnh là vô cùng quan trọng.</p>
+                        
+                        <h3>1. Người mệnh Kim</h3>
+                        <p>Nên chọn ngọc có màu trắng, xám, ghi hoặc vàng kim. Tránh màu đỏ, hồng, tím (màu của Hỏa khắc Kim). Ngọc phỉ thúy trắng (tuyết ngọc) là lựa chọn lý tưởng cho người mệnh Kim.</p>
+                        
+                        <h3>2. Người mệnh Mộc</h3>
+                        <p>Phù hợp với ngọc màu xanh lá cây, xanh nước biển. Tránh màu trắng, vàng kim (màu của Kim khắc Mộc). Ngọc phỉ thúy xanh lục bảo là hoàn hảo cho người mệnh Mộc.</p>
+                        
+                        <h3>3. Người mệnh Thủy</h3>
+                        <p>Nên đeo ngọc màu đen, xanh nước biển, trắng. Tránh màu vàng, nâu đất (màu của Thổ khắc Thủy). Ngọc phỉ thúy đen (hắc ngọc) rất hiếm và quý giá.</p>
+                        
+                        <h3>4. Người mệnh Hỏa</h3>
+                        <p>Phù hợp với ngọc màu đỏ, hồng, tím, xanh lá cây. Tránh màu đen, xanh nước biển (màu của Thủy khắc Hỏa). Ngọc phỉ thúy đỏ (hồng ngọc) rất phù hợp.</p>
+                        
+                        <h3>5. Người mệnh Thổ</h3>
+                        <p>Nên chọn ngọc màu vàng, nâu, đỏ, hồng. Tránh màu xanh lá cây (màu của Mộc khắc Thổ). Ngọc phỉ thúy vàng (hoàng ngọc) mang lại nhiều may mắn.</p>
+                        
+                        <h3>Lời khuyên từ chuyên gia</h3>
+                        <p>Theo chuyên gia phong thủy Lý Hồng Vân: "Việc chọn ngọc phỉ thúy không chỉ dựa trên màu sắc mà còn phải xem xét độ trong, vân đá và hình dáng. Mỗi viên ngọc đều có năng lượng riêng, quan trọng là cảm nhận được sự kết nối khi chạm vào."</p>
+                    `
+                };
+            } else {
+                // Default article for other IDs
+                article = {
+                    title: "Cách phân biệt ngọc phỉ thúy thật và giả trong 5 phút",
+                    category: "NGỌC QUÝ",
+                    author: "Trần Minh Đức",
+                    date: "14/04/2024",
+                    readTime: "5 phút",
+                    views: "18.2K",
+                    image: "images/tintuc1.png",
+                    content: `
+                        <p>Với giá trị cao của ngọc phỉ thúy, việc xuất hiện nhiều sản phẩm giả, nhái là điều không tránh khỏi. Dưới đây là những phương pháp đơn giản giúp bạn phân biệt ngọc thật - giả chỉ trong 5 phút.</p>
+                        
+                        <h3>1. Kiểm tra bằng nhiệt độ</h3>
+                        <p>Ngọc phỉ thúy thật có khả năng giữ nhiệt tốt. Áp viên ngọc vào má, nếu cảm thấy mát lạnh ban đầu rồi nhanh chóng ấm lên theo nhiệt độ cơ thể, đó là ngọc thật. Ngọc giả thường không có đặc tính này.</p>
+                        
+                        <h3>2. Kiểm tra độ trong</h3>
+                        <p>Dùng đèn pin chiếu xuyên qua viên ngọc. Ngọc thật sẽ cho ánh sáng xuyên qua một cách tự nhiên, có thể thấy được các vân đá bên trong. Ngọc giả thường quá trong hoặc quá đục.</p>
+                        
+                        <h3>3. Kiểm tra bằng âm thanh</h3>
+                        <p>Gõ nhẹ viên ngọc vào một vật bằng kim loại. Ngọc thật sẽ phát ra âm thanh trong trẻo, vang xa. Ngọc giả có âm thanh đục, ngắn.</p>
+                        
+                        <h3>4. Kiểm tra trọng lượng</h3>
+                        <p>Ngọc phỉ thúy thật có tỷ trọng cao hơn các loại đá giả. Cầm trên tay có cảm giác nặng, chắc chắn so với kích thước.</p>
+                        
+                        <h3>5. Kiểm tra bằng kính lúp</h3>
+                        <p>Quan sát dưới kính lúp độ phóng đại 10x. Ngọc thật có cấu trúc tinh thể tự nhiên, trong khi ngọc giả thường có bọt khí hoặc vết nứt nhân tạo.</p>
+                        
+                        <h3>Các loại ngọc giả phổ biến</h3>
+                        <ul>
+                            <li><strong>Ngọc nhân tạo:</strong> Làm từ thủy tinh hoặc nhựa</li>
+                            <li><strong>Ngọc xử lý:</strong> Ngọc thật nhưng đã qua xử lý hóa chất</li>
+                            <li><strong>Ngọc ghép:</strong> Chỉ một phần là ngọc thật</li>
+                            <li><strong>Ngọc nhuộm màu:</strong> Màu sắc không tự nhiên</li>
+                        </ul>
+                        
+                        <p><strong>Lời khuyên:</strong> Luôn mua ngọc phỉ thúy ở những cửa hàng uy tín, có giấy chứng nhận kiểm định từ các tổ chức như GIA, NGTC.</p>
+                    `
+                };
+            }
+            
+            const modal = document.createElement('div');
+            modal.className = 'product-modal active';
+            modal.innerHTML = `
+                <div class="modal-overlay"></div>
+                <div class="modal-content">
+                    <button class="modal-close"><i class="fas fa-times"></i></button>
+                    <div class="modal-article">
+                        <span class="news-category-badge ${getCategoryClass(article.category)}">
+                            <i class="${getCategoryIcon(article.category)}"></i> ${article.category}
+                        </span>
+                        <h1>${article.title}</h1>
+                        
+                        <div class="article-meta">
+                            <span><i class="fas fa-user"></i> ${article.author}</span>
+                            <span><i class="fas fa-calendar"></i> ${article.date}</span>
+                            <span><i class="fas fa-clock"></i> Đọc ${article.readTime}</span>
+                            <span><i class="fas fa-eye"></i> ${article.views} lượt xem</span>
+                        </div>
+                        
+                        <img src="${article.image}" alt="${article.title}" 
+                             onerror="this.onerror=null; this.src='https://via.placeholder.com/800x400/00796B/FFFFFF?text=Bài+viết'">
+                        
+                        <div class="article-content">
+                            ${article.content}
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Setup close events
+            const closeBtn = modal.querySelector('.modal-close');
+            const overlay = modal.querySelector('.modal-overlay');
+            
+            const closeModal = () => modal.classList.remove('active');
+            
+            closeBtn.addEventListener('click', closeModal);
+            overlay.addEventListener('click', closeModal);
+            
+            // Close on ESC
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        }
+        
+        function filterByCategory(category) {
+            showNotification(`Đang lọc tin tức theo danh mục: ${category}`, 'info');
+            // In a real application, this would filter the news articles
+        }
+        
+        function filterByTag(tag) {
+            showNotification(`Đang tìm kiếm tin tức với tag: ${tag}`, 'info');
+            // In a real application, this would filter the news articles
+        }
+        
+        function getCategoryClass(category) {
+            const categories = {
+                'PHONG THỦY': 'category-phongthuy',
+                'NGỌC QUÝ': 'category-ngocquy',
+                'VĂN HÓA': 'category-vanhoa'
+            };
+            return categories[category] || 'category-phongthuy';
+        }
+        
+        function getCategoryIcon(category) {
+            const icons = {
+                'PHONG THỦY': 'fas fa-yin-yang',
+                'NGỌC QUÝ': 'fas fa-gem',
+                'VĂN HÓA': 'fas fa-landmark'
+            };
+            return icons[category] || 'fas fa-newspaper';
+        }
+        
+        function showNotification(message, type = 'info') {
+            // Xóa thông báo cũ nếu có
+            const oldNotification = document.querySelector('.notification');
+            if (oldNotification) {
+                oldNotification.remove();
+            }
+            
+            // Tạo thông báo mới
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            
+            const icon = type === 'success' ? 'fa-check-circle' : 
+                        type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle';
+            
+            notification.innerHTML = `
+                <i class="fas ${icon}"></i>
+                <span>${message}</span>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Tự động ẩn sau 5 giây
+            setTimeout(() => {
+                notification.style.animation = 'slideInRight 0.4s ease-out reverse';
+                setTimeout(() => notification.remove(), 400);
+            }, 5000);
+        }
     </script>
 </body>
 </html>
